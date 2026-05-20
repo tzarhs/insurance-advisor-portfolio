@@ -167,7 +167,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -4.5px;
     border: 5px solid transparent;
@@ -181,4 +181,34 @@
     right: 0;
     border-right-color: var(--border);
   }
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.1s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* 2. Global focus ring — applies to every interactive element */
+:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* 3. Main content — tabIndex=-1 lets it receive focus from JS,
+   but we don't want a visible ring since it's not user-triggered */
+#main-content:focus {
+  outline: none;
 }

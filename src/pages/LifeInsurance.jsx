@@ -113,16 +113,18 @@ function ServiceCard({ service, index }) {
       href={service.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group block bg-neutral-900 border border-white/6 rounded-sm p-6 transition-all duration-500 hover:border-red-800/50 hover:bg-[#1a0808] hover:-translate-y-1 ${
+      className={`group block bg-white border border-white/6 rounded-sm p-6 transition-all duration-500 hover:border-red-800/50 hover:bg-[#1a0808] hover:-translate-y-1 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
       <div className="text-2xl mb-4">{service.icon}</div>
-      <h3 className="font-serif text-lg text-white font-bold mb-2 group-hover:text-red-400 transition-colors duration-200">
+      <h3 className="font-serif text-lg text-black font-bold mb-2 group-hover:text-red-400 transition-colors duration-200">
         {service.title}
       </h3>
-      <p className="text-white/50 text-sm leading-relaxed">{service.desc}</p>
+      <p className="text-black/50 text-sm group-hover:text-red-400 transition-colors leading-relaxed">
+        {service.desc}
+      </p>
       <div className="mt-5 flex items-center gap-2 text-red-500 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         Μάθετε Περισσότερα
         <svg
@@ -216,13 +218,10 @@ export default function LifeInsurance() {
             αντιξοότητες του μέλλοντος.
           </p>
         </div>
-
-        {/* Bottom blend */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-white pointer-events-none" />
       </section>
 
       {/* Products */}
-      <section className="bg-white py-20 px-6 md:px-16">
+      <section className="bg-neutral-800 py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-10">
             <div className="w-7 h-px bg-red-600" />
@@ -238,11 +237,8 @@ export default function LifeInsurance() {
         </div>
       </section>
 
-      {/* Gradient bridge */}
-      <div className="h-20 bg-gradient-to-b from-white to-neutral-900" />
-
       {/* Extra Services */}
-      <section ref={extrasRef} className="bg-neutral-900 py-20 px-6 md:px-16">
+      <section ref={extrasRef} className="bg-neutral-800 py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto">
           <div
             className={`mb-12 transition-all duration-700 ${extrasInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
