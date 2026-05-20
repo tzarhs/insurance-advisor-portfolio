@@ -28,7 +28,7 @@ const SERVICES = [
     icon: carIcon,
     title: "Ασφάλεια Οχήματος",
     path: "/oxima",
-    desc: "Φροντίζουμε να είμαστε δίπλα σας στα αναπάντεχα περιστατικά που μπορεί να συμβούν στο όχημά σας, ώστε να συνεχίζετε με περισσότερη ασφάλεια και ηρεμία την καθημερινότητά σας.",
+    desc: "Φροντίζουμε να είμαστε δίπλα σας στα αναπάντεχα περιστατικά που μπορεί να συμβούν στο όχημά σας.",
   },
 ];
 
@@ -56,29 +56,45 @@ export default function Services() {
   return (
     <section
       id="services"
+      aria-labelledby="services-heading"
       className="relative bg-neutral-800 py-24 md:py-36 px-6 md:px-16 overflow-hidden"
     >
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-red-950/30 blur-[120px] pointer-events-none" />
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-red-950/30 blur-[120px] pointer-events-none"
+      />
+
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div
+            aria-hidden="true"
+            className="flex items-center justify-center gap-3 mb-4"
+          >
             <div className="w-7 h-px bg-red-600" />
             <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
               Υπηρεσίες
             </span>
             <div className="w-7 h-px bg-red-600" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl text-white font-bold">
+          <h2
+            id="services-heading"
+            className="font-serif text-4xl md:text-5xl text-white font-bold"
+          >
             Πως μπορώ να σας βοηθήσω;
           </h2>
         </div>
 
-        {/* Slider */}
-        <div className="relative flex items-center justify-center gap-4 md:gap-6">
-          {/* Prev button */}
+        {/* Slider — role="region" + aria-label groups it for screen readers */}
+        <div
+          role="region"
+          aria-label="Slider υπηρεσιών"
+          className="relative flex items-center justify-center gap-4 md:gap-6"
+        >
+          {/* Prev button — aria-label describes the action clearly */}
           <button
             onClick={prev}
+            aria-label={`Προηγούμενη υπηρεσία: ${SERVICES[(active - 1 + SERVICES.length) % SERVICES.length].title}`}
             className="flex-shrink-0 w-11 h-11 rounded-full border border-white/15 text-white/60 flex items-center justify-center transition-all duration-200 hover:border-red-600 hover:text-red-500 z-10"
           >
             <svg
@@ -90,25 +106,38 @@ export default function Services() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
+              aria-hidden="true"
             >
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
 
           {/* Cards container */}
-          <div className="flex items-center flex-1 justify-center">
-            {/* Left card */}
-            <div className="flex-1 max-w-[260px] cursor-pointer" onClick={prev}>
+          {/* aria-live="polite" announces the active card title to screen readers on change */}
+          <div
+            className="flex items-center flex-1 justify-center"
+            aria-live="polite"
+            aria-atomic="true"
+            aria-label={`Εμφανίζεται: ${SERVICES[center].title}`}
+          >
+            <div
+              className="flex-1 max-w-[260px] cursor-pointer"
+              onClick={prev}
+              aria-hidden="true"
+            >
               <ServiceCard service={SERVICES[left]} variant="side" />
             </div>
 
-            {/* Center card */}
+            {/* Only the active card is meaningful to screen readers */}
             <div className="flex-1 max-w-[320px] z-10">
               <ServiceCard service={SERVICES[center]} variant="active" />
             </div>
 
-            {/* Right card */}
-            <div className="flex-1 max-w-[260px] cursor-pointer" onClick={next}>
+            <div
+              className="flex-1 max-w-[260px] cursor-pointer"
+              onClick={next}
+              aria-hidden="true"
+            >
               <ServiceCard service={SERVICES[right]} variant="side" />
             </div>
           </div>
@@ -116,6 +145,7 @@ export default function Services() {
           {/* Next button */}
           <button
             onClick={next}
+            aria-label={`Επόμενη υπηρεσία: ${SERVICES[(active + 1) % SERVICES.length].title}`}
             className="flex-shrink-0 w-11 h-11 rounded-full border border-white/15 text-white/60 flex items-center justify-center transition-all duration-200 hover:border-red-600 hover:text-red-500 z-10"
           >
             <svg
@@ -127,18 +157,26 @@ export default function Services() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
+              aria-hidden="true"
             >
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
         </div>
 
-        {/* Dots */}
-        <div className="flex justify-center gap-2 mt-10">
-          {SERVICES.map((_, i) => (
+        {/* Dots — each button clearly labeled */}
+        <div
+          role="tablist"
+          aria-label="Επιλογή υπηρεσίας"
+          className="flex justify-center gap-2 mt-10"
+        >
+          {SERVICES.map((service, i) => (
             <button
               key={i}
+              role="tab"
               onClick={() => goTo(i)}
+              aria-selected={i === active}
+              aria-label={`Υπηρεσία ${i + 1}: ${service.title}`}
               className={`rounded-full transition-all duration-300 ${
                 i === active
                   ? "w-6 h-2 bg-red-600"
@@ -164,14 +202,15 @@ function ServiceCard({ service, variant }) {
           : "bg-neutral-950 border-white/6 p-6 opacity-50 scale-[0.96]"
       }`}
     >
-      {/* Icon */}
+      {/* Icon — alt text matches the card title to give context */}
       <img
         src={service.icon}
-        alt={service.title}
+        alt=""
+        aria-hidden="true"
         className={`mb-4 transition-all duration-300 invert ${isActive ? "w-8 h-8" : "w-5 h-5"}`}
       />
 
-      {/* Title */}
+      {/* h3 — correct level under the h2 section heading */}
       <h3
         className={`font-serif font-bold mb-3 transition-all duration-300 ${
           isActive ? "text-white text-2xl" : "text-white/70 text-lg"
@@ -180,7 +219,6 @@ function ServiceCard({ service, variant }) {
         {service.title}
       </h3>
 
-      {/* Description */}
       <p
         className={`text-sm leading-relaxed transition-all duration-300 ${
           isActive ? "text-white/55" : "text-white/30 line-clamp-5"
@@ -189,10 +227,12 @@ function ServiceCard({ service, variant }) {
         {service.desc}
       </p>
 
-      {/* Learn more button */}
+      {/* "Μάθετε Περισσότερα" — aria-label adds context so screen readers
+          don't just hear "Μάθετε Περισσότερα" with no indication what about */}
       {isActive && (
         <button
           onClick={() => navigate(service.path)}
+          aria-label={`Μάθετε περισσότερα για ${service.title}`}
           className="mt-4 flex items-center gap-2 text-xs tracking-[0.12em] uppercase text-white py-2.5 rounded-sm transition-all duration-200 hover:opacity-85 group"
         >
           Μάθετε Περισσότερα
@@ -205,6 +245,7 @@ function ServiceCard({ service, variant }) {
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
             className="transition-transform duration-200 group-hover:translate-x-1"
           >
             <polyline points="9 18 15 12 9 6" />

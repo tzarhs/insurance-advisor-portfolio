@@ -22,9 +22,12 @@ export default function About() {
   const inView = useInView(ref);
 
   return (
+    // aria-labelledby ties the section to its heading — screen readers
+    // announce "Σχετικά με μένα, region" when entering this section
     <section
       id="about"
       ref={ref}
+      aria-labelledby="about-heading"
       className="bg-white py-24 md:py-36 px-6 md:px-16"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -34,15 +37,18 @@ export default function About() {
             inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
           }`}
         >
-          {/* Photo frame */}
           <div className="relative aspect-[5/5] rounded-sm overflow-hidden">
+            {/* Descriptive alt text — who is in the photo and their role */}
             <img
               src={aboutImg}
-              alt="Rafail Simitos"
+              alt="Ραφαήλ Σιμητός, Ασφαλιστικός Σύμβουλος στην Interamerican"
               className="w-full h-full object-cover object-top"
             />
-            {/* Subtle red overlay at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-red-950/40 to-transparent" />
+            {/* Decorative overlay — hidden from screen readers */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-t from-red-950/40 to-transparent"
+            />
           </div>
         </div>
 
@@ -52,22 +58,25 @@ export default function About() {
             inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
           }`}
         >
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-5">
+          {/* Eyebrow — decorative, hidden from screen readers to avoid
+              reading "Σχετικά με μένα" twice (section label + heading) */}
+          <div aria-hidden="true" className="flex items-center gap-3 mb-5">
             <div className="w-7 h-px bg-red-600" />
             <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
               Σχετικά με μένα
             </span>
           </div>
 
-          {/* Heading */}
-          <h2 className="font-serif text-4xl md:text-5xl text-neutral-950 font-bold leading-tight mb-6">
+          {/* id matches aria-labelledby on <section> */}
+          <h2
+            id="about-heading"
+            className="font-serif text-4xl md:text-5xl text-neutral-950 font-bold leading-tight mb-6"
+          >
             Αναλυτική σκέψη.
             <br />
             <span className="text-red-600">Εξατομικευμένες</span> λύσεις.
           </h2>
 
-          {/* Bio */}
           <p className="text-neutral-500 text-[0.95rem] leading-relaxed mb-5">
             Ως Ασφαλιστικός Σύμβουλος στην{" "}
             <span className="text-red-500 font-medium">Interamerican</span>, δεν
@@ -86,7 +95,6 @@ export default function About() {
             αναλυτική και τεχνική εξειδίκευση στη διαχείριση δεδομένων.
           </p>
 
-          {/* Divider */}
           <div className="border-t border-neutral-200 pt-8">
             <p className="text-neutral-400 text-xs tracking-[0.1em] uppercase mb-1">
               Εξουσιοδοτημένος Αντιπρόσωπος

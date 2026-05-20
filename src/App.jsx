@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import LifeInsurance from "./pages/LifeInsurance";
 import HomeInsurance from "./pages/HomeInsurance";
 import HealthInsurance from "./pages/HealthInsurance";
+import VehicleInsurance from "./pages/VehicleInsurance";
 
 export default function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/zoi" element={<LifeInsurance />} />
           <Route path="/katoikia" element={<HomeInsurance />} />
           <Route path="/ygeia" element={<HealthInsurance />} />
+          <Route path="/oxima" element={<VehicleInsurance />} />
         </Routes>
       </main>
     </>

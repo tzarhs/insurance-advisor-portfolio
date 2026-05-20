@@ -219,7 +219,7 @@ export default function HomeInsurance() {
       </section>
 
       {/* Products grid */}
-      <section ref={productsRef} className="bg-neutral-800 py-20 px-6 md:px-16">
+      <section ref={productsRef} className="bg-white py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto">
           <div
             className={`mb-12 transition-all duration-700 ${productsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
@@ -230,7 +230,7 @@ export default function HomeInsurance() {
                 Προγράμματα
               </span>
             </div>
-            <h2 className="font-serif text-3xl md:text-4xl text-white font-bold">
+            <h2 className="font-serif text-3xl md:text-4xl text-neutral-800 font-bold">
               Για να ζείτε ασφαλέστερα,
               <br />
               <span className="text-red-600">περισσότερο και καλύτερα</span>
