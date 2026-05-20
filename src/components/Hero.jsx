@@ -15,98 +15,114 @@ export default function Hero() {
       () => setVisible(true),
       prefersReducedMotion ? 0 : 100,
     );
+
     return () => clearTimeout(timer);
   }, []);
 
   const scrollTo = (href) => {
     const el = document.querySelector(href);
+
     if (el)
-      el.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
+      el.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
   };
 
   return (
     <section
       id="hero"
       aria-label="Εισαγωγή — Ραφαήλ Σιμητός, Ασφαλιστικός Σύμβουλος"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-start overflow-hidden"
     >
-      {/* Background image — decorative, so hidden from screen readers */}
+      {/* Background image */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
         style={{ backgroundImage: `url(${heroImg})` }}
       />
 
-      {/* Overlays — decorative */}
-      <div aria-hidden="true" className="absolute inset-0 bg-neutral-950/70" />
+      {/* Overlays */}
+      <div aria-hidden="true" className="absolute inset-0 bg-neutral-950/75" />
+
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-red-950/60 via-transparent to-transparent"
+        className="absolute inset-0 bg-gradient-to-r from-red-950/70 via-transparent to-transparent"
       />
+
       <div
         aria-hidden="true"
         className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-neutral-950 to-transparent"
       />
+
+      {/* Decorative line */}
       <div
         aria-hidden="true"
-        className={`absolute left-[clamp(1.5rem,5vw,4rem)] top-[20%] bottom-[20%] w-[2px] bg-gradient-to-b from-transparent via-red-600 to-transparent transition-opacity duration-1000 delay-300 ${
+        className={`hidden sm:block absolute left-[clamp(1rem,5vw,4rem)] top-[20%] bottom-[20%] w-[2px] bg-gradient-to-b from-transparent via-red-600 to-transparent transition-opacity duration-1000 delay-300 ${
           visible ? "opacity-100" : "opacity-0"
         }`}
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full px-6 md:px-16 pl-12 md:pl-20">
-        <div
-          aria-hidden="true"
-          className={`flex items-center gap-3 mb-6 transition-all duration-700 delay-200 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }`}
-        >
-          <div className="w-7 h-px bg-red-600" />
-          <span className="text-red-500 text-xs tracking-[0.25em] uppercase font-light">
-            Ασφαλιστικός Σύμβουλος · Interamerican
-          </span>
-        </div>
-
-        <h1
-          className={`font-serif text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight mb-4 transition-all duration-700 delay-300 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          Ραφαήλ Ι. <span className="text-red-600">Σιμητός</span>
-        </h1>
-
-        {/* Tagline */}
-        <p
-          className={`text-white/55 text-base md:text-lg leading-relaxed max-w-md mb-10 font-light transition-all duration-700 delay-500 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }`}
-        >
-          Δεν πιστεύω σε γενικές λύσεις. Κάθε στρατηγική ασφάλισης σχεδιάζεται
-          αποκλειστικά για εσάς.
-        </p>
-
-        <div
-          className={`flex gap-4 flex-wrap transition-all duration-700 delay-[650ms] ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }`}
-        >
-          <button
-            onClick={() => scrollTo("#contact")}
-            aria-label="Επικοινωνήστε μαζί μου — μετάβαση στη φόρμα επικοινωνίας"
-            className="text-white text-xs tracking-[0.1em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 shadow-lg shadow-red-950/40"
-            style={{ background: "linear-gradient(135deg, #c8141e, #8b0000)" }}
+      <div className="relative z-10 max-w-6xl mx-auto w-full px-16 sm:px-18 md:px-26 pt-56 sm:pt-60 md:pt-68">
+        <div className="max-w-2xl">
+          {/* Top label */}
+          <div
+            aria-hidden="true"
+            className={`flex items-center gap-3 mb-5 transition-all duration-700 delay-200 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
           >
-            Επικοινωνήστε μαζί μου
-          </button>
+            <div className="w-6 sm:w-8 h-px bg-red-600" />
 
-          <button
-            onClick={() => scrollTo("#services")}
-            aria-label="Δείτε τις υπηρεσίες μου — μετάβαση στην ενότητα υπηρεσιών"
-            className="text-white/80 text-xs tracking-[0.1em] uppercase px-7 py-3.5 rounded-sm border border-white/20 transition-all duration-200 hover:border-red-600 hover:text-white"
+            <span className="text-red-500 text-[10px] sm:text-xs tracking-[0.22em] uppercase font-light">
+              Ασφαλιστικός Σύμβουλος · Interamerican
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1
+            className={`font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-5 transition-all duration-700 delay-300 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
           >
-            Υπηρεσίες
-          </button>
+            Ραφαήλ Ι. <span className="text-red-600">Σιμητός</span>
+          </h1>
+
+          {/* Tagline */}
+          <p
+            className={`text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mb-8 md:mb-10 font-light transition-all duration-700 delay-500 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
+          >
+            Δεν πιστεύω σε γενικές λύσεις. Κάθε στρατηγική ασφάλισης σχεδιάζεται
+            αποκλειστικά για εσάς.
+          </p>
+
+          {/* Buttons */}
+          <div
+            className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-[650ms] ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
+          >
+            <button
+              onClick={() => scrollTo("#contact")}
+              aria-label="Επικοινωνήστε μαζί μου — μετάβαση στη φόρμα επικοινωνίας"
+              className="w-fit sm:w-auto text-white text-[11px] sm:text-xs tracking-[0.1em] uppercase px-6 sm:px-7 py-3.5 rounded-sm transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 shadow-lg shadow-red-950/40"
+              style={{
+                background: "linear-gradient(135deg, #c8141e, #8b0000)",
+              }}
+            >
+              Επικοινωνήστε μαζί μου
+            </button>
+
+            <button
+              onClick={() => scrollTo("#services")}
+              aria-label="Δείτε τις υπηρεσίες μου — μετάβαση στην ενότητα υπηρεσιών"
+              className="w-fit sm:w-auto text-white/80 text-[11px] sm:text-xs tracking-[0.1em] uppercase px-6 sm:px-7 py-3.5 rounded-sm border border-white/20 transition-all duration-200 hover:border-red-600 hover:text-white"
+            >
+              Υπηρεσίες
+            </button>
+          </div>
         </div>
       </div>
     </section>

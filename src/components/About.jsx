@@ -28,8 +28,9 @@ export default function About() {
       id="about"
       ref={ref}
       aria-labelledby="about-heading"
-      className="bg-white py-24 md:py-36 px-6 md:px-16"
+      className="bg-white py-16 sm:py-20 md:py-36 px-6 md:px-16"
     >
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center"></div>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Left: Photo */}
         <div
@@ -37,12 +38,12 @@ export default function About() {
             inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
           }`}
         >
-          <div className="relative aspect-[5/5] rounded-sm overflow-hidden">
+          <div className="relative aspect-[4/5] sm:aspect-square md:aspect-[5/5] rounded-sm overflow-hidden">
             {/* Descriptive alt text — who is in the photo and their role */}
             <img
               src={aboutImg}
               alt="Ραφαήλ Σιμητός, Ασφαλιστικός Σύμβουλος στην Interamerican"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-[50%_35%] sm:object-[50%_25%] md:object-[50%_60%]"
             />
             {/* Decorative overlay — hidden from screen readers */}
             <div
@@ -55,7 +56,7 @@ export default function About() {
         {/* Right: Text */}
         <div
           className={`transition-all duration-700 delay-150 ${
-            inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+            inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-0"
           }`}
         >
           {/* Eyebrow — decorative, hidden from screen readers to avoid
@@ -70,14 +71,14 @@ export default function About() {
           {/* id matches aria-labelledby on <section> */}
           <h2
             id="about-heading"
-            className="font-serif text-4xl md:text-5xl text-neutral-950 font-bold leading-tight mb-6"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl text-neutral-950 font-bold leading-tight mb-6"
           >
             Αναλυτική σκέψη.
             <br />
             <span className="text-red-600">Εξατομικευμένες</span> λύσεις.
           </h2>
 
-          <p className="text-neutral-500 text-[0.95rem] leading-relaxed mb-5">
+          <p className="text-neutral-500 text-sm sm:text-[0.95rem] leading-relaxed mb-5">
             Ως Ασφαλιστικός Σύμβουλος στην{" "}
             <span className="text-red-500 font-medium">Interamerican</span>, δεν
             πιστεύω σε γενικές λύσεις. Εστιάζω στον εντοπισμό κινδύνων, στη

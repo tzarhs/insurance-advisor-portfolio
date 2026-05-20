@@ -6,6 +6,7 @@ import LifeInsurance from "./pages/LifeInsurance";
 import HomeInsurance from "./pages/HomeInsurance";
 import HealthInsurance from "./pages/HealthInsurance";
 import VehicleInsurance from "./pages/VehicleInsurance";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const location = useLocation();
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/oxima" element={<VehicleInsurance />} />
         </Routes>
       </main>
+      <Analytics />
     </>
   );
 }

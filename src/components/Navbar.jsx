@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Αρχική", href: "#hero" },
@@ -8,16 +9,18 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [activeHash, setActiveHash] = useState("#hero");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollTo = (href) => {
     const el = document.querySelector(href);
+
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
       setActiveHash(href);
+      setMenuOpen(false);
     }
   };
 
-  // Keep activeHash in sync when user scrolls manually
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,10 +32,12 @@ export default function Navbar() {
       },
       { threshold: 0.5 },
     );
+
     NAV_LINKS.forEach(({ href }) => {
       const el = document.querySelector(href);
       if (el) observer.observe(el);
     });
+
     return () => observer.disconnect();
   }, []);
 
@@ -41,7 +46,8 @@ export default function Navbar() {
       aria-label="Κύρια πλοήγηση"
       className="absolute top-2 left-0 right-0 z-50 px-6 md:px-16"
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between h-[70px]">
+      <div className="max-w-6xl mx-auto flex items-center justify-between h-[70px] relative">
+        {/* Logo */}
         <a
           href="#hero"
           onClick={(e) => {
@@ -54,13 +60,12 @@ export default function Navbar() {
           Rafail Simitos
         </a>
 
-        {/* Nav links */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-8">
+        {/* Desktop Nav */}
+        <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
           {NAV_LINKS.map((l) => (
             <button
               key={l.href}
               onClick={() => scrollTo(l.href)}
-              // aria-current tells screen readers which section is active
               aria-current={activeHash === l.href ? "true" : undefined}
               className="bg-transparent border-none cursor-pointer text-white text-sm tracking-[0.15em] uppercase transition-colors duration-200 hover:text-red-600 aria-[current]:text-red-500"
             >
@@ -69,15 +74,61 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* Desktop CTA */}
         <button
           onClick={() => scrollTo("#contact")}
           aria-label="Επικοινωνήστε μαζί μου — μετάβαση στη φόρμα επικοινωνίας"
-          className="text-white text-sm tracking-[0.1em] uppercase px-5 py-2.5 rounded-xl transition-opacity duration-200 hover:opacity-85"
+          className="hidden md:block text-white text-sm tracking-[0.1em] uppercase px-5 py-2.5 rounded-xl transition-opacity duration-200 hover:opacity-85"
           style={{ background: "linear-gradient(135deg, #c8141e, #8b0000)" }}
         >
           Επικοινωνία
         </button>
+
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Άνοιγμα μενού"
+          className="md:hidden text-white"
+        >
+          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+        </button>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center gap-10 md:hidden">
+            {/* Close button */}
+            <button
+              onClick={() => setMenuOpen(false)}
+              aria-label="Κλείσιμο μενού"
+              className="absolute top-6 right-6 text-white"
+            >
+              <X size={36} />
+            </button>
+
+            {/* Nav links */}
+            {NAV_LINKS.map((l) => (
+              <button
+                key={l.href}
+                onClick={() => scrollTo(l.href)}
+                aria-current={activeHash === l.href ? "true" : undefined}
+                className="bg-transparent border-none cursor-pointer text-white text-2xl tracking-[0.2em] uppercase transition-colors duration-200 hover:text-red-600 aria-[current]:text-red-500"
+              >
+                {l.label}
+              </button>
+            ))}
+
+            {/* CTA */}
+            <button
+              onClick={() => scrollTo("#contact")}
+              className="text-white text-lg tracking-[0.1em] uppercase px-8 py-4 rounded-xl transition-opacity duration-200 hover:opacity-85"
+              style={{
+                background: "linear-gradient(135deg, #c8141e, #8b0000)",
+              }}
+            >
+              Επικοινωνία
+            </button>
+          </div>
+        )}
       </div>
     </nav>
   );

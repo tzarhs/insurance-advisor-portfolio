@@ -8,9 +8,9 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <div className="h-6 bg-gradient-to-b from-black to-white" />
+
       <About />
-      <div className="h-6 bg-gradient-to-b from-white to-neutral-800" />
+
       <Services />
     </>
   );

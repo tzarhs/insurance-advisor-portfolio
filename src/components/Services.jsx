@@ -115,30 +115,38 @@ export default function Services() {
           {/* Cards container */}
           {/* aria-live="polite" announces the active card title to screen readers on change */}
           <div
-            className="flex items-center flex-1 justify-center"
+            className="flex items-center flex-1 justify-center w-full"
             aria-live="polite"
             aria-atomic="true"
             aria-label={`Εμφανίζεται: ${SERVICES[center].title}`}
           >
-            <div
-              className="flex-1 max-w-[260px] cursor-pointer"
-              onClick={prev}
-              aria-hidden="true"
-            >
-              <ServiceCard service={SERVICES[left]} variant="side" />
+            <div className="hidden md:flex items-center w-full justify-center gap-6">
+              <div
+                className="max-w-[260px] cursor-pointer"
+                onClick={prev}
+                aria-hidden="true"
+              >
+                <ServiceCard service={SERVICES[left]} variant="side" />
+              </div>
+
+              <div className="max-w-[320px] z-10">
+                <ServiceCard service={SERVICES[center]} variant="active" />
+              </div>
+
+              <div
+                className="max-w-[260px] cursor-pointer"
+                onClick={next}
+                aria-hidden="true"
+              >
+                <ServiceCard service={SERVICES[right]} variant="side" />
+              </div>
             </div>
 
-            {/* Only the active card is meaningful to screen readers */}
-            <div className="flex-1 max-w-[320px] z-10">
-              <ServiceCard service={SERVICES[center]} variant="active" />
-            </div>
-
-            <div
-              className="flex-1 max-w-[260px] cursor-pointer"
-              onClick={next}
-              aria-hidden="true"
-            >
-              <ServiceCard service={SERVICES[right]} variant="side" />
+            {/* Mobile (1 card only) */}
+            <div className="flex md:hidden w-full justify-center">
+              <div className="w-full max-w-sm">
+                <ServiceCard service={SERVICES[center]} variant="active" />
+              </div>
             </div>
           </div>
 
@@ -198,8 +206,8 @@ function ServiceCard({ service, variant }) {
     <div
       className={`rounded-sm border transition-all duration-400 ${
         isActive
-          ? "bg-[#9e2828] border-red-900/50 p-8 shadow-2xl shadow-red-950/40 scale-[1.08]"
-          : "bg-neutral-950 border-white/6 p-6 opacity-50 scale-[0.96]"
+          ? "bg-[#9e2828] border-red-900/50 p-8 shadow-2xl shadow-red-950/40 md:scale-[1.08] scale-100"
+          : "bg-neutral-950 border-white/6 p-6 opacity-50 md:scale-[0.96] scale-100"
       }`}
     >
       {/* Icon — alt text matches the card title to give context */}
