@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import map from "../assets/map.svg";
-import hospital from "../assets/hospital.svg";
-import ambulance from "../assets/ambulance.svg";
+import check from "../assets/check.svg";
 
 function useInView(ref) {
   const [inView, setInView] = useState(false);
@@ -21,9 +19,9 @@ function useInView(ref) {
 }
 
 const HIGHLIGHTS = [
-  { icon: hospital, text: "Ιδιόκτητες υποδομές περίθαλψης" },
-  { icon: ambulance, text: "Επίγεια και εναέρια μέσα υγειονομικής μεταφοράς" },
-  { icon: map, text: "Εκτεταμένο και πανελλαδικό Δίκτυο Υγείας" },
+  { icon: check, text: "Ιδιόκτητες υποδομές περίθαλψης" },
+  { icon: check, text: "Επίγεια και εναέρια μέσα υγειονομικής μεταφοράς" },
+  { icon: check, text: "Εκτεταμένο και πανελλαδικό Δίκτυο Υγείας" },
 ];
 
 const SERVICES = [
@@ -77,17 +75,17 @@ const SERVICES = [
 function ServiceCard({ service, index, inView }) {
   return (
     <div
-      className={`bg-white border border-neutral-200 rounded-sm p-6 transition-all duration-500 hover:border-red-300 hover:shadow-lg hover:shadow-red-50 hover:-translate-y-1 ${
+      className={`bg-white border border-neutral-200 rounded-sm p-4 md:p-6 transition-all duration-500 hover:border-red-300 hover:shadow-lg hover:shadow-red-50 hover:-translate-y-1 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
       style={{ transitionDelay: `${index * 0.07}s` }}
     >
-      <div className="text-2xl mb-4">{service.icon}</div>
-      <h3 className="font-serif text-lg text-neutral-900 font-bold mb-2 leading-snug">
+      <div className="text-2xl mb-3 md:mb-4">{service.icon}</div>
+      <h3 className="font-serif text-base md:text-lg text-neutral-900 font-bold mb-2 leading-snug">
         {service.title}
       </h3>
       <p className="text-neutral-500 text-sm leading-relaxed">{service.desc}</p>
-      <div className="mt-5 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
+      <div className="mt-4 md:mt-5 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
     </div>
   );
 }
@@ -108,7 +106,7 @@ export default function HealthInsurance() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative bg-neutral-800 pt-32 pb-18 px-6 md:px-16 overflow-hidden">
+      <section className="relative bg-neutral-800 pt-24 md:pt-32 pb-12 md:pb-18 px-5 md:px-16 overflow-hidden">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-red-950/30 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-red-950/15 blur-[100px] pointer-events-none" />
 
@@ -116,7 +114,7 @@ export default function HealthInsurance() {
           {/* Back */}
           <button
             onClick={() => navigate("/")}
-            className="flex items-center gap-2 text-white/40 text-xs tracking-widest uppercase mb-12 hover:text-white/70 transition-colors duration-200 group"
+            className="flex items-center gap-2 text-white/40 text-xs tracking-widest uppercase mb-10 md:mb-12 hover:text-white/70 transition-colors duration-200 group"
           >
             <svg
               width="14"
@@ -134,20 +132,19 @@ export default function HealthInsurance() {
             Επιστροφή
           </button>
 
-          <div className="flex flex-col gap-12 items-center">
-            {/* Left */}
+          <div className="flex flex-col gap-8 md:gap-12 items-center">
             <div>
               <div
-                className={`flex items-center gap-3 mb-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                className={`flex items-center gap-3 mb-5 md:mb-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               >
                 <div className="w-7 h-px bg-red-600" />
-                <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
+                <span className="text-red-500 text-[0.65rem] md:text-xs tracking-[0.25em] uppercase">
                   Interamerican · Προϊόντα & Υπηρεσίες
                 </span>
               </div>
 
               <h1
-                className={`font-serif text-5xl md:text-6xl text-white font-bold leading-tight mb-4 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+                className={`font-serif text-4xl sm:text-5xl md:text-6xl text-white font-bold leading-tight mb-4 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
               >
                 Ασφάλεια
                 <br />
@@ -155,31 +152,34 @@ export default function HealthInsurance() {
               </h1>
 
               <p
-                className={`font-serif text-xl text-white/60 mb-6 transition-all duration-700 delay-150 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                className={`font-serif text-lg md:text-xl text-white/60 mb-5 md:mb-6 transition-all duration-700 delay-150 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               >
                 Η υγεία σας, προτεραιότητά μας
               </p>
 
               <p
-                className={`text-white/50 text-sm leading-relaxed mb-8 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                className={`text-white/50 text-sm leading-relaxed mb-7 md:mb-8 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               >
                 Στην Interamerican προτεραιότητά μας είναι να ενισχύσουμε και να
                 διαφυλάξουμε την καλή υγεία σας, για να ζείτε ξέγνοιαστα και με
                 ασφάλεια κάθε στιγμή!
               </p>
 
-              {/* Right — highlights + badge */}
+              {/* Highlights + badge */}
               <div
-                className={`flex flex-col gap-4 transition-all duration-700 delay-400 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
+                className={`flex flex-col gap-3 md:gap-4 transition-all duration-700 delay-400 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
               >
-                {/* Highlights */}
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
                   {HIGHLIGHTS.map((h) => (
                     <div
                       key={h.text}
-                      className="flex flex-row items-center text-center gap-3 bg-white/5 border border-white/8 rounded-sm px-4 py-6"
+                      className="flex flex-row items-center gap-3 bg-white/5 border border-white/8 rounded-sm px-4 py-4 md:py-6"
                     >
-                      <img src={h.icon} alt={h.text} className="w-8 h-8" />
+                      <img
+                        src={h.icon}
+                        alt={h.text}
+                        className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0"
+                      />
                       <p className="text-white/60 text-xs leading-relaxed">
                         {h.text}
                       </p>
@@ -187,7 +187,6 @@ export default function HealthInsurance() {
                   ))}
                 </div>
 
-                {/* Discount badge */}
                 <div
                   className="inline-flex items-center gap-3 border border-red-800/40 rounded-sm px-4 py-2 self-start"
                   style={{
@@ -203,7 +202,8 @@ export default function HealthInsurance() {
                   </p>
                 </div>
               </div>
-              <p className="text-neutral-400 text-xs mt-8 leading-relaxed max-w-2xl">
+
+              <p className="text-neutral-400 text-xs mt-6 md:mt-8 leading-relaxed max-w-2xl">
                 * Το ποσοστό της έκπτωσης καθορίζεται με βάση την επιλογή του
                 προγράμματος ασφάλισης καθώς και το σύνολο των ασφαλισμένων ανά
                 συμβόλαιο.
@@ -214,17 +214,20 @@ export default function HealthInsurance() {
       </section>
 
       {/* Bewell System */}
-      <section ref={bewellRef} className="bg-neutral-900 py-20 px-6 md:px-16">
+      <section
+        ref={bewellRef}
+        className="bg-neutral-900 py-16 md:py-20 px-5 md:px-16"
+      >
         <div className="max-w-6xl mx-auto">
           <div
-            className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center transition-all duration-700 ${bewellInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center transition-all duration-700 ${bewellInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div>
               <div className="flex items-center gap-3 mb-4"></div>
-              <h2 className="font-serif text-3xl md:text-4xl text-white font-bold mb-5">
+              <h2 className="font-serif text-2xl md:text-4xl text-white font-bold mb-4 md:mb-5">
                 Σύστημα Υγείας <span className="text-red-600">Bewell</span>
               </h2>
-              <p className="text-neutral-300 text-sm leading-relaxed mb-6">
+              <p className="text-neutral-300 text-sm leading-relaxed mb-5 md:mb-6">
                 Δημιουργήστε ένα ενιαίο συμβόλαιο για ολόκληρη την οικογένειά
                 σας, με όσα έχει πραγματικά ανάγκη το κάθε μέλος της. Ρυθμίστε
                 το ύψος των καλύψεων, το όριο συμμετοχής και τις πρόσθετες
@@ -237,8 +240,7 @@ export default function HealthInsurance() {
               </p>
             </div>
 
-            {/* Stat cards */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
               {[
                 { num: "1.400+", label: "Γιατροί όλων των ειδικοτήτων" },
                 { num: "260+", label: "Σύγχρονα διαγνωστικά κέντρα" },
@@ -247,9 +249,9 @@ export default function HealthInsurance() {
               ].map((s) => (
                 <div
                   key={s.label}
-                  className="bg-neutral-50 border border-neutral-200 rounded-sm p-5"
+                  className="bg-neutral-50 border border-neutral-200 rounded-sm p-4 md:p-5"
                 >
-                  <div className="font-serif text-3xl text-red-600 font-bold mb-1">
+                  <div className="font-serif text-2xl md:text-3xl text-red-600 font-bold mb-1">
                     {s.num}
                   </div>
                   <div className="text-neutral-800 text-xs leading-relaxed">
@@ -266,10 +268,13 @@ export default function HealthInsurance() {
       <div className="h-20 bg-gradient-to-b from-white to-neutral-50" />
 
       {/* Services grid */}
-      <section ref={servicesRef} className="bg-neutral-50 py-20 px-6 md:px-16">
+      <section
+        ref={servicesRef}
+        className="bg-neutral-50 py-16 md:py-20 px-5 md:px-16"
+      >
         <div className="max-w-6xl mx-auto">
           <div
-            className={`mb-12 transition-all duration-700 ${servicesInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`mb-10 md:mb-12 transition-all duration-700 ${servicesInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-7 h-px bg-red-600" />
@@ -277,14 +282,14 @@ export default function HealthInsurance() {
                 Μοναδικές Παροχές & Υπηρεσίες
               </span>
             </div>
-            <h2 className="font-serif text-3xl md:text-4xl text-neutral-900 font-bold">
+            <h2 className="font-serif text-2xl md:text-4xl text-neutral-900 font-bold">
               Ό,τι χρειάζεστε,
               <br />
               <span className="text-red-600">όπου κι αν βρίσκεστε</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {SERVICES.map((s, i) => (
               <ServiceCard
                 key={s.title}
@@ -298,20 +303,20 @@ export default function HealthInsurance() {
       </section>
 
       {/* CTA Footer */}
-      <section className="bg-neutral-950 py-16 px-6 md:px-16 border-t border-white/5">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="bg-neutral-950 py-12 md:py-16 px-5 md:px-16 border-t border-white/5">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
           <div>
-            <p className="text-white/30 text-xs tracking-widest uppercase mb-2">
+            <p className="text-white/50 text-xs tracking-widest uppercase mb-2">
               Επικοινωνήστε μαζί μου
             </p>
-            <h3 className="font-serif text-2xl text-white font-bold">
+            <h3 className="font-serif text-xl md:text-2xl text-white font-bold">
               Έτοιμοι να ξεκινήσουμε;
             </h3>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 w-fit md:w-auto">
             <a
               href="tel:+306985084708"
-              className="text-white text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm transition-all duration-200 hover:opacity-85"
+              className="text-white text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm text-center transition-all duration-200 hover:opacity-85"
               style={{
                 background: "linear-gradient(135deg, #c8141e, #8b0000)",
               }}

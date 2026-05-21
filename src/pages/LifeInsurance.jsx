@@ -21,12 +21,10 @@ const INSURANCE_PRODUCTS = [
   {
     title: "Ασφάλιση Ζωής",
     desc: "Σε περίπτωση πρόωρης απώλειας ζωής, 5 διαφορετικές επιλογές Ασφάλισης Ζωής εξασφαλίζουν το μέλλον και την ποιότητα ζωής των αγαπημένων σας.",
-    href: "https://www.interamerican.gr/idiotes/proionta-ypiresies/zoi/asfaleia-zois",
   },
   {
     title: "Ασφάλιση Εισοδήματος",
     desc: "Σε περίπτωση απώλειας εισοδήματος, λόγω ασθένειας ή ατυχήματος, 4 διαφορετικές επιλογές Ασφάλισης Εισοδήματος εξασφαλίζουν οτι εσείς και οι αγαπημένοι σας θα διατηρήσετε την ποιότητα ζωής σας.",
-    href: "https://www.interamerican.gr/idiotes/proionta-ypiresies/zoi/asfaleia-eisodimatos",
   },
 ];
 
@@ -34,25 +32,21 @@ const EXTRA_SERVICES = [
   {
     title: "Άμεση Ιατρική Βοήθεια 24/7",
     desc: "Με ένα τηλεφώνημα στην 24ωρη Γραμμή Υγείας 1010, είμαστε δίπλα σας, 24 ώρες το 24ωρο. Με τα ιδιόκτητα ασθενοφόρα, ελικόπτερα και αεροπλάνα μας, αναλαμβάνουμε την υπεύθυνη μεταφορά σας στο κοντινότερο νοσοκομείο.",
-    href: "https://www.interamerican.gr/idiotes/proionta-ypiresies/ygeia/amesh-iatrikh-voitheia",
     icon: "🚑",
   },
   {
     title: "Αθηναϊκή Mediclinic",
     desc: "Η υπερσύγχρονη Γενική Κλινική της Interamerican, διαθέτει όλες τις ιατρικές ειδικότητες και εξασφαλίζει υψηλής ποιότητας υπηρεσίες πρωτοβάθμιας και δευτεροβάθμιας φροντίδας.",
-    href: "https://www.interamerican.gr/idiotes/proionta-ypiresies/ygeia/athinaiki-klinikh",
     icon: "🏥",
   },
   {
     title: "Πολυϊατρεία Medifirst",
     desc: "Οι 3 σύγχρονες ιατρικές μονάδες πρωτοβάθμιας φροντίδας της Interamerican λειτουργούν 24/7 και παρέχουν υψηλής ποιότητας υπηρεσίες πρόληψης, διάγνωσης και θεραπείας.",
-    href: "https://www.interamerican.gr/idiotes/proionta-ypiresies/ygeia/polyiatreia-medifirst",
     icon: "🩺",
   },
   {
     title: "Καλύτερη Ζωή",
     desc: "Σας προσφέρουμε μοναδικά προνόμια και αποκλειστικές προσφορές διατροφής και άσκησης, σε συνεργασία με κορυφαία brands.",
-    href: "https://www.interamerican.gr/idiotes/proionta-ypiresies/ygeia/kalyterh-zwh",
     icon: "✨",
   },
 ];
@@ -67,14 +61,14 @@ function ProductCard({ product, index }) {
       href={product.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group block bg-white border border-neutral-200 rounded-sm p-8 transition-all duration-500 hover:border-red-300 hover:shadow-xl hover:shadow-red-50 hover:-translate-y-1 ${
+      className={`group block bg-white border border-neutral-200 rounded-sm p-5 md:p-8 transition-all duration-500 hover:border-red-300 hover:shadow-xl hover:shadow-red-50 hover:-translate-y-1 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
-          <h3 className="font-serif text-xl text-neutral-900 font-bold mb-3 group-hover:text-red-700 transition-colors duration-200">
+          <h3 className="font-serif text-lg md:text-xl text-neutral-900 font-bold mb-3 group-hover:text-red-700 transition-colors duration-200">
             {product.title}
           </h3>
           <p className="text-neutral-500 text-sm leading-relaxed">
@@ -97,8 +91,7 @@ function ProductCard({ product, index }) {
           </svg>
         </div>
       </div>
-      {/* Bottom accent */}
-      <div className="mt-6 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
+      <div className="mt-5 md:mt-6 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
     </a>
   );
 }
@@ -113,19 +106,19 @@ function ServiceCard({ service, index }) {
       href={service.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group block bg-white border border-white/6 rounded-sm p-6 transition-all duration-500 hover:border-red-800/50 hover:bg-[#1a0808] hover:-translate-y-1 ${
+      className={`group block bg-white border border-neutral-400 rounded-sm p-5 md:p-6 transition-all duration-500 hover:-translate-y-1 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
-      <div className="text-2xl mb-4">{service.icon}</div>
-      <h3 className="font-serif text-lg text-black font-bold mb-2 group-hover:text-red-400 transition-colors duration-200">
+      <div className="text-2xl mb-3 md:mb-4">{service.icon}</div>
+      <h3 className="font-serif text-base md:text-lg text-black font-bold mb-2 group-hover:text-red-600 transition-colors duration-200">
         {service.title}
       </h3>
-      <p className="text-black/50 text-sm group-hover:text-red-400 transition-colors leading-relaxed">
+      <p className="text-black/50 text-sm transition-colors leading-relaxed">
         {service.desc}
       </p>
-      <div className="mt-5 flex items-center gap-2 text-red-500 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      <div className="mt-4 md:mt-5 flex items-center gap-2 text-red-500 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         Μάθετε Περισσότερα
         <svg
           width="12"
@@ -158,15 +151,14 @@ export default function LifeInsurance() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative bg-neutral-800 pt-32 pb-24 px-6 md:px-16 overflow-hidden">
-        {/* Red glow */}
+      <section className="relative bg-neutral-800 pt-24 md:pt-32 pb-16 md:pb-24 px-5 md:px-16 overflow-hidden">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-red-950/30 blur-[120px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto relative">
           {/* Back button */}
           <button
             onClick={() => navigate("/")}
-            className="flex items-center gap-2 text-white/40 text-xs tracking-widest uppercase mb-12 hover:text-white/70 transition-colors duration-200 group"
+            className="flex items-center gap-2 text-white/40 text-xs tracking-widest uppercase mb-10 md:mb-12 hover:text-white/70 transition-colors duration-200 group"
           >
             <svg
               width="14"
@@ -184,34 +176,30 @@ export default function LifeInsurance() {
             Επιστροφή
           </button>
 
-          {/* Eyebrow */}
           <div
-            className={`flex items-center gap-3 mb-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`flex items-center gap-3 mb-5 md:mb-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             <div className="w-7 h-px bg-red-600" />
-            <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
+            <span className="text-red-500 text-[0.65rem] md:text-xs tracking-[0.25em] uppercase">
               Interamerican · Ασφάλειες
             </span>
           </div>
 
-          {/* Title */}
           <h1
-            className={`font-serif text-5xl md:text-7xl text-white font-bold leading-tight mb-6 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`font-serif text-4xl sm:text-5xl md:text-7xl text-white font-bold leading-tight mb-5 md:mb-6 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             Ζωή &<br />
             <span className="text-red-600">Εισόδημα</span>
           </h1>
 
-          {/* Subtitle */}
           <p
-            className={`text-2xl md:text-3xl text-white/70 font-serif mb-6 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`text-xl sm:text-2xl md:text-3xl text-white/70 font-serif mb-5 md:mb-6 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             Εξασφαλίστε ένα ξέγνοιαστο μέλλον!
           </p>
 
-          {/* Description */}
           <p
-            className={`text-white/50 text-base leading-relaxed max-w-2xl transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`text-white/50 text-sm md:text-base leading-relaxed max-w-2xl transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             Με την Ασφάλεια Ζωής και Εισοδήματος της Interamerican, εσείς και οι
             αγαπημένοι σας απολαμβάνετε την ζωή, χωρίς να ανησυχείτε για τις
@@ -221,15 +209,15 @@ export default function LifeInsurance() {
       </section>
 
       {/* Products */}
-      <section className="bg-neutral-800 py-20 px-6 md:px-16">
+      <section className="bg-black py-16 md:py-20 px-5 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-10">
+          <div className="flex items-center gap-3 mb-8 md:mb-10">
             <div className="w-7 h-px bg-red-600" />
             <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
               Προστατέψτε εσάς και την οικογένειά σας
             </span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {INSURANCE_PRODUCTS.map((p, i) => (
               <ProductCard key={p.title} product={p} index={i} />
             ))}
@@ -238,10 +226,13 @@ export default function LifeInsurance() {
       </section>
 
       {/* Extra Services */}
-      <section ref={extrasRef} className="bg-neutral-800 py-20 px-6 md:px-16">
+      <section
+        ref={extrasRef}
+        className="bg-white py-16 md:py-20 px-5 md:px-16"
+      >
         <div className="max-w-6xl mx-auto">
           <div
-            className={`mb-12 transition-all duration-700 ${extrasInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`mb-10 md:mb-12 transition-all duration-700 ${extrasInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-7 h-px bg-red-600" />
@@ -249,10 +240,10 @@ export default function LifeInsurance() {
                 Μοναδικές Παροχές & Υπηρεσίες
               </span>
             </div>
-            <h2 className="font-serif text-3xl md:text-4xl text-white font-bold max-w-xl leading-snug">
+            <h2 className="font-serif text-2xl md:text-4xl text-neutral-800 font-bold max-w-xl leading-snug">
               Και για την <span className="text-red-500">υγεία</span> σας
             </h2>
-            <p className="text-white/45 text-sm leading-relaxed mt-4 max-w-2xl">
+            <p className="text-neutral-500 text-sm leading-relaxed mt-4 max-w-2xl">
               Με την Ασφάλεια Ζωής & την Ασφάλεια Εισοδήματος αποκτάτε πρόσβαση
               σε ένα σύνολο προϊόντων, υπηρεσιών, αποκλειστικών παροχών και
               μοναδικών προνομίων. Έτσι, μπορείτε να βελτιώσετε την ποιότητα
@@ -269,20 +260,20 @@ export default function LifeInsurance() {
       </section>
 
       {/* CTA Footer */}
-      <section className="bg-neutral-950 py-16 px-6 md:px-16 border-t border-white/5">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="bg-neutral-950 py-12 md:py-16 px-5 md:px-16 border-t border-white/5">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
           <div>
             <p className="text-white/30 text-xs tracking-widest uppercase mb-2">
               Επικοινωνήστε μαζί μου
             </p>
-            <h3 className="font-serif text-2xl text-white font-bold">
+            <h3 className="font-serif text-xl md:text-2xl text-white font-bold">
               Έτοιμοι να ξεκινήσουμε;
             </h3>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 w-fit md:w-auto">
             <a
               href="tel:+306985084708"
-              className="text-white text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm transition-all duration-200 hover:opacity-85"
+              className="text-white text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm text-center transition-all duration-200 hover:opacity-85"
               style={{
                 background: "linear-gradient(135deg, #c8141e, #8b0000)",
               }}
