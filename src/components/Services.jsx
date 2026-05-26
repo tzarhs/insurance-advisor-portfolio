@@ -57,11 +57,11 @@ export default function Services() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="relative bg-neutral-800 py-24 md:py-36 px-6 md:px-16 overflow-hidden"
+      className="relative bg-neutral-950 py-24 md:py-36 px-6 md:px-16 overflow-hidden"
     >
       <div
         aria-hidden="true"
-        className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-red-950/30 blur-[120px] pointer-events-none"
+        className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-red-950/50 blur-[120px] pointer-events-none"
       />
 
       <div className="max-w-6xl mx-auto">
@@ -207,7 +207,7 @@ function ServiceCard({ service, variant }) {
       className={`rounded-sm border transition-all duration-400 ${
         isActive
           ? "bg-[#9e2828] border-red-900/50 p-8 shadow-2xl shadow-red-950/40 md:scale-[1.08] scale-100"
-          : "bg-neutral-950 border-white/6 p-6 opacity-50 md:scale-[0.96] scale-100"
+          : "bg-neutral-800 border-white/6 p-6 opacity-50 md:scale-[0.96] scale-100"
       }`}
     >
       {/* Icon — alt text matches the card title to give context */}
