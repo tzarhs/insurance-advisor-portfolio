@@ -106,12 +106,12 @@ const SERVICES = [
     title: "my interamerican",
     desc: "Διαχειριστείτε online το συμβόλαιό σας 24 ώρες το 24ωρο.",
   },
-  {
-    icon: "📖",
-    label: "Ασφάλιση Οχημάτων",
-    title: "Άρθρα για Μετακίνηση & Ασφαλείς Διαδρομές",
-    desc: "Διαβάστε χρήσιμα άρθρα για την ασφαλή μετακίνηση μέσα από το blog μας.",
-  },
+  // {
+  //   icon: "📖",
+  //   label: "Ασφάλιση Οχημάτων",
+  //   title: "Άρθρα για Μετακίνηση & Ασφαλείς Διαδρομές",
+  //   desc: "Διαβάστε χρήσιμα άρθρα για την ασφαλή μετακίνηση μέσα από το blog μας.",
+  // },
 ];
 
 function ProductCard({ product, index, inView }) {
@@ -130,7 +130,7 @@ function ProductCard({ product, index, inView }) {
         {product.title}
       </h3>
       <p className="text-neutral-500 text-sm leading-relaxed">{product.desc}</p>
-      <div className="mt-4 md:mt-5 flex items-center gap-2 text-red-600 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      {/* <div className="mt-4 md:mt-5 flex items-center gap-2 text-red-600 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         Δείτε περισσότερα
         <svg
           width="12"
@@ -144,7 +144,7 @@ function ProductCard({ product, index, inView }) {
         >
           <polyline points="9 18 15 12 9 6" />
         </svg>
-      </div>
+      </div> */}
       <div className="mt-3 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
     </div>
   );
@@ -169,7 +169,7 @@ function ServiceCard({ service, index, inView }) {
         {service.title}
       </h3>
       <p className="text-neutral-500 text-sm leading-relaxed">{service.desc}</p>
-      <div className="mt-4 md:mt-5 flex items-center gap-2 text-red-500 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      {/* <div className="mt-4 md:mt-5 flex items-center gap-2 text-red-500 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         Μάθετε Περισσότερα
         <svg
           width="12"
@@ -183,7 +183,7 @@ function ServiceCard({ service, index, inView }) {
         >
           <polyline points="9 18 15 12 9 6" />
         </svg>
-      </div>
+      </div> */}
     </a>
   );
 }
@@ -378,7 +378,13 @@ export default function VehicleInsurance() {
               📞 698 508 4708
             </a>
             <button
-              onClick={() => navigate("/#contact")}
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  const el = document.querySelector("#contact");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
               className="text-white/70 text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm border border-white/15 transition-all duration-200 hover:border-red-600 hover:text-white"
             >
               Φόρμα Επικοινωνίας

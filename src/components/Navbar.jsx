@@ -55,7 +55,7 @@ export default function Navbar() {
             scrollTo("#hero");
           }}
           aria-label="Rafail Simitos — Αρχική σελίδα"
-          className="font-serif text-3xl tracking-wide text-white whitespace-nowrap no-underline"
+          className="font-serif text-xl lg:text-3xl tracking-wide text-white whitespace-nowrap no-underline"
         >
           Rafail Simitos
         </a>

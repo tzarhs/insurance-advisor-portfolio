@@ -115,7 +115,7 @@ export default function Footer() {
               href="https://giannis-tzaris.onrender.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/80 font-medium"
+              className="text-white/80 text-xs font-medium"
             >
               Giannis Tzaris
             </a>

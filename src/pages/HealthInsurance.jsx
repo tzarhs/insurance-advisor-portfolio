@@ -324,7 +324,13 @@ export default function HealthInsurance() {
               📞 698 508 4708
             </a>
             <button
-              onClick={() => navigate("/#contact")}
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  const el = document.querySelector("#contact");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
               className="text-white/70 text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm border border-white/15 transition-all duration-200 hover:border-red-600 hover:text-white"
             >
               Φόρμα Επικοινωνίας

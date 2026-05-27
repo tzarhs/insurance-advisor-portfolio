@@ -24,7 +24,6 @@ const INFO_CARDS = [
     ),
     label: "ΤΟΠΟΘΕΣΙΑ",
     value: "Θεσσαλονίκη",
-    sub: "Ελλάδα",
   },
   {
     icon: (
@@ -129,11 +128,43 @@ export default function Contact() {
 
         {/* Bottom: form + text */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+          {/* Right: text */}
+          <div className="md:pt-2 order-first md:order-last">
+            <h2 className="font-serif text-3xl md:text-4xl text-neutral-900 font-bold mb-4 leading-tight">
+              Ας μιλήσουμε
+            </h2>
+            <p className="text-neutral-500 text-sm md:text-base leading-relaxed mb-6">
+              Κάθε ερώτηση αξίζει μια ειλικρινή απάντηση. Επικοινωνήστε μαζί μου
+              και ας βρούμε μαζί την κάλυψη που σας ταιριάζει.
+            </p>
+            <div className="w-12 h-0.5 bg-red-600" />
+
+            <a
+              href="https://www.linkedin.com/in/raphael-i-simitos-3b1485323/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-6 text-blue-800  transition-colors duration-200 group"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              <span className="text-xs tracking-widest uppercase">
+                LinkedIn
+              </span>
+            </a>
+          </div>
+
           {/* Left: form */}
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 order-last md:order-first"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
@@ -243,38 +274,6 @@ export default function Contact() {
               </p>
             )}
           </form>
-
-          {/* Right: text */}
-          <div className="md:pt-2">
-            <h2 className="font-serif text-3xl md:text-4xl text-neutral-900 font-bold mb-4 leading-tight">
-              Ας μιλήσουμε
-            </h2>
-            <p className="text-neutral-500 text-sm md:text-base leading-relaxed mb-6">
-              Κάθε ερώτηση αξίζει μια ειλικρινή απάντηση. Επικοινωνήστε μαζί μου
-              και ας βρούμε μαζί την κάλυψη που σας ταιριάζει.
-            </p>
-            <div className="w-12 h-0.5 bg-red-600" />
-
-            <a
-              href="https://www.linkedin.com/in/raphael-i-simitos-3b1485323/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 text-blue-800  transition-colors duration-200 group"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-              <span className="text-xs tracking-widest uppercase">
-                LinkedIn
-              </span>
-            </a>
-          </div>
         </div>
       </div>
     </section>

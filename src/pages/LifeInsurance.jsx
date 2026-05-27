@@ -75,7 +75,7 @@ function ProductCard({ product, index }) {
             {product.desc}
           </p>
         </div>
-        <div className="flex-shrink-0 w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-600 transition-all duration-200 mt-1">
+        {/* <div className="flex-shrink-0 w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-600 transition-all duration-200 mt-1">
           <svg
             width="14"
             height="14"
@@ -89,7 +89,7 @@ function ProductCard({ product, index }) {
           >
             <polyline points="9 18 15 12 9 6" />
           </svg>
-        </div>
+        </div> */}
       </div>
       <div className="mt-5 md:mt-6 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
     </a>
@@ -118,7 +118,7 @@ function ServiceCard({ service, index }) {
       <p className="text-black/50 text-sm transition-colors leading-relaxed">
         {service.desc}
       </p>
-      <div className="mt-4 md:mt-5 flex items-center gap-2 text-red-500 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      {/* <div className="mt-4 md:mt-5 flex items-center gap-2 text-red-500 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         Μάθετε Περισσότερα
         <svg
           width="12"
@@ -132,7 +132,7 @@ function ServiceCard({ service, index }) {
         >
           <polyline points="9 18 15 12 9 6" />
         </svg>
-      </div>
+      </div> */}
     </a>
   );
 }
@@ -281,7 +281,13 @@ export default function LifeInsurance() {
               📞 698 508 4708
             </a>
             <button
-              onClick={() => navigate("/#contact")}
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  const el = document.querySelector("#contact");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
               className="text-white/70 text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm border border-white/15 transition-all duration-200 hover:border-red-600 hover:text-white"
             >
               Φόρμα Επικοινωνίας
