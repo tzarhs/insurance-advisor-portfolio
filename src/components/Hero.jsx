@@ -72,10 +72,8 @@ export default function Hero() {
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
-            <div className="w-6 sm:w-8 h-px bg-red-600" />
-
             <span className="text-red-500 text-[10px] sm:text-xs tracking-[0.22em] uppercase font-light">
-              Ασφαλιστικός Σύμβουλος · Interamerican
+              Ασφαλιστικoς Συμβουλος · Interamerican
             </span>
           </div>
 
@@ -112,7 +110,7 @@ export default function Hero() {
                 background: "linear-gradient(135deg, #c8141e, #8b0000)",
               }}
             >
-              Επικοινωνήστε μαζί μου
+              Επικοινωνηστε μαζι μου
             </button>
 
             <button
@@ -120,7 +118,7 @@ export default function Hero() {
               aria-label="Δείτε τις υπηρεσίες μου — μετάβαση στην ενότητα υπηρεσιών"
               className="w-fit sm:w-auto text-white/80 text-[11px] sm:text-xs tracking-[0.1em] uppercase px-6 sm:px-7 py-3.5 rounded-sm border border-white/20 transition-all duration-200 hover:border-red-600 hover:text-white"
             >
-              Υπηρεσίες
+              Υπηρεσιες
             </button>
           </div>
         </div>

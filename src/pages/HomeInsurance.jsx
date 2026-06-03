@@ -20,41 +20,41 @@ function useInView(ref) {
 
 const PRODUCTS = [
   {
-    label: "Ασφάλιση Κατοικίας",
+    label: "Ασφαλιση Κατοικιας",
     title: "Κύριας Κατοικίας",
     desc: "Ολοκληρωμένη προστασία για την κύρια κατοικία σας από κάθε σημαντικό κίνδυνο.",
     icon: "🏠",
   },
   {
-    label: "Ασφάλιση Κατοικίας",
+    label: "Ασφαλιση Κατοικιας",
     title: "Εξοχικής Κατοικίας",
     desc: "Σύγχρονα προγράμματα ασφάλισης εξοχικής κατοικίας ανάλογα με τις ανάγκες σας.",
     icon: "🏡",
   },
   {
-    label: "Ασφάλιση Κατοικίας",
+    label: "Ασφαλιση Κατοικιας",
     title: "Ενυπόθηκης Κατοικίας",
     desc: "Ειδικά σχεδιασμένο πρόγραμμα για εσάς που αποκτήσατε την κατοικία σας με δάνειο.",
     icon: "🔑",
   },
   {
-    label: "Ασφάλιση Κατοικίας",
+    label: "Ασφαλιση Κατοικιας",
     title: "Μέλη Π.ΟΜ.ΙΔ.Α.",
     desc: "Πρωτοποριακά προγράμματα σε συνεργασία με την Π.ΟΜ.ΙΔ.Α. ειδικά για τα μέλη της.",
     icon: "🤝",
   },
   {
-    label: "Ασφάλιση Κατοικίας",
+    label: "Ασφαλιση Κατοικιας",
     title: "my interamerican",
     desc: "Διαχειριστείτε online το συμβόλαιό σας 24 ώρες το 24ωρο.",
     icon: "💻",
   },
-  {
-    label: "Ασφάλιση Κατοικίας",
-    title: "Άρθρα για το σπίτι",
-    desc: "Διαβάστε χρήσιμα άρθρα για το σπίτι και το εξοχική κατοικία μέσα από το blog μας.",
-    icon: "📖",
-  },
+  // {
+  //   label: "Ασφαλιση Κατοικιας",
+  //   title: "Άρθρα για το σπίτι",
+  //   desc: "Διαβάστε χρήσιμα άρθρα για το σπίτι και το εξοχική κατοικία μέσα από το blog μας.",
+  //   icon: "📖",
+  // },
 ];
 
 const REASONS = [
@@ -161,7 +161,7 @@ export default function HomeInsurance() {
             >
               <polyline points="15 18 9 12 15 6" />
             </svg>
-            Επιστροφή
+            Επιστροφη
           </button>
 
           <div className="flex flex-col gap-10 md:gap-12 items-center">
@@ -169,9 +169,8 @@ export default function HomeInsurance() {
               <div
                 className={`flex items-center gap-3 mb-5 md:mb-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               >
-                <div className="w-7 h-px bg-red-600" />
                 <span className="text-red-500 text-[0.65rem] md:text-xs tracking-[0.25em] uppercase">
-                  Interamerican · Προϊόντα & Υπηρεσίες
+                  Interamerican · Προϊοντα & Υπηρεσιες
                 </span>
               </div>
 
@@ -225,9 +224,8 @@ export default function HomeInsurance() {
             className={`mb-10 md:mb-12 transition-all duration-700 ${productsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-7 h-px bg-red-600" />
               <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
-                Προγράμματα
+                Προγραμματα
               </span>
             </div>
             <h2 className="font-serif text-2xl md:text-4xl text-white font-bold">
@@ -305,7 +303,7 @@ export default function HomeInsurance() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
           <div>
             <p className="text-white/50 text-xs tracking-widest uppercase mb-2">
-              Επικοινωνήστε μαζί μου
+              Επικοινωνηστε μαζι μου
             </p>
             <h3 className="font-serif text-xl md:text-2xl text-white font-bold">
               Έτοιμοι να ξεκινήσουμε;
@@ -331,7 +329,7 @@ export default function HomeInsurance() {
               }}
               className="text-white/70 text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm border border-white/15 transition-all duration-200 hover:border-red-600 hover:text-white"
             >
-              Φόρμα Επικοινωνίας
+              Φορμα Επικοινωνιας
             </button>
           </div>
         </div>

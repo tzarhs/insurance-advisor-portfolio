@@ -62,9 +62,8 @@ export default function About() {
           {/* Eyebrow — decorative, hidden from screen readers to avoid
               reading "Σχετικά με μένα" twice (section label + heading) */}
           <div aria-hidden="true" className="flex items-center gap-3 mb-5">
-            <div className="w-7 h-px bg-red-600" />
             <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
-              Σχετικά με μένα
+              Σχετικα με εμενα
             </span>
           </div>
 
@@ -98,10 +97,10 @@ export default function About() {
 
           <div className="border-t border-neutral-200 pt-8">
             <p className="text-neutral-400 text-xs tracking-[0.1em] uppercase mb-1">
-              Εξουσιοδοτημένος Αντιπρόσωπος
+              Εξουσιοδοτημενος Αντιπροσωπος
             </p>
             <p className="text-neutral-500 text-sm font-medium tracking-wide">
-              Interamerican · Θεσσαλονίκη
+              Interamerican · Θεσσαλονικη
             </p>
           </div>
         </div>

@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Αρχική", href: "#hero" },
-  { label: "Σχετικά", href: "#about" },
-  { label: "Υπηρεσίες", href: "#services" },
+  { label: "Αρχικη", href: "#hero" },
+  { label: "Σχετικα", href: "#about" },
+  { label: "Υπηρεσιες", href: "#services" },
 ];
 
 export default function Navbar() {
@@ -81,7 +81,7 @@ export default function Navbar() {
           className="hidden md:block text-white text-sm tracking-[0.1em] uppercase px-5 py-2.5 rounded-xl transition-opacity duration-200 hover:opacity-85"
           style={{ background: "linear-gradient(135deg, #c8141e, #8b0000)" }}
         >
-          Επικοινωνία
+          Επικοινωνια
         </button>
 
         {/* Mobile Hamburger */}
@@ -125,7 +125,7 @@ export default function Navbar() {
                 background: "linear-gradient(135deg, #c8141e, #8b0000)",
               }}
             >
-              Επικοινωνία
+              Επικοινωνια
             </button>
           </div>
         )}

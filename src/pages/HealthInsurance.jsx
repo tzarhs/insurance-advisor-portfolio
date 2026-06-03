@@ -75,7 +75,7 @@ const SERVICES = [
 function ServiceCard({ service, index, inView }) {
   return (
     <div
-      className={`bg-white border border-neutral-200 rounded-sm p-4 md:p-6 transition-all duration-500 hover:border-red-300 hover:shadow-lg hover:shadow-red-50 hover:-translate-y-1 ${
+      className={`group bg-white border border-neutral-200 rounded-sm p-4 md:p-6 transition-all duration-500 hover:border-red-300 hover:shadow-lg hover:shadow-red-50 hover:-translate-y-1 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
       style={{ transitionDelay: `${index * 0.07}s` }}
@@ -85,7 +85,7 @@ function ServiceCard({ service, index, inView }) {
         {service.title}
       </h3>
       <p className="text-neutral-500 text-sm leading-relaxed">{service.desc}</p>
-      <div className="mt-4 md:mt-5 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
+      <div className="mt-3 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
     </div>
   );
 }
@@ -129,7 +129,7 @@ export default function HealthInsurance() {
             >
               <polyline points="15 18 9 12 15 6" />
             </svg>
-            Επιστροφή
+            Επιστροφη
           </button>
 
           <div className="flex flex-col gap-8 md:gap-12 items-center">
@@ -137,9 +137,8 @@ export default function HealthInsurance() {
               <div
                 className={`flex items-center gap-3 mb-5 md:mb-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               >
-                <div className="w-7 h-px bg-red-600" />
                 <span className="text-red-500 text-[0.65rem] md:text-xs tracking-[0.25em] uppercase">
-                  Interamerican · Προϊόντα & Υπηρεσίες
+                  Interamerican · Προϊοντα & Υπηρεσιες
                 </span>
               </div>
 
@@ -277,9 +276,8 @@ export default function HealthInsurance() {
             className={`mb-10 md:mb-12 transition-all duration-700 ${servicesInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-7 h-px bg-red-600" />
               <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
-                Μοναδικές Παροχές & Υπηρεσίες
+                Μοναδικες Παροχες & Υπηρεσιες
               </span>
             </div>
             <h2 className="font-serif text-2xl md:text-4xl text-neutral-900 font-bold">
@@ -307,7 +305,7 @@ export default function HealthInsurance() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
           <div>
             <p className="text-white/50 text-xs tracking-widest uppercase mb-2">
-              Επικοινωνήστε μαζί μου
+              Επικοινωνηστε μαζι μου
             </p>
             <h3 className="font-serif text-xl md:text-2xl text-white font-bold">
               Έτοιμοι να ξεκινήσουμε;
@@ -333,7 +331,7 @@ export default function HealthInsurance() {
               }}
               className="text-white/70 text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm border border-white/15 transition-all duration-200 hover:border-red-600 hover:text-white"
             >
-              Φόρμα Επικοινωνίας
+              Φορμα Επικοινωνιας
             </button>
           </div>
         </div>

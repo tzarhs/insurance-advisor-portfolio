@@ -64,7 +64,7 @@ export default function Footer() {
           {/* Center: nav links */}
           <div>
             <p className="text-white/35 text-[0.65rem] tracking-[0.2em] uppercase mb-4">
-              Πλοήγηση
+              Πλοηγηση
             </p>
             <ul className="flex flex-col gap-2.5">
               {NAV_LINKS.map((l) => (
@@ -83,7 +83,7 @@ export default function Footer() {
           {/* Right: service links */}
           <div>
             <p className="text-white/30 text-[0.65rem] tracking-[0.2em] uppercase mb-4">
-              Υπηρεσίες
+              Υπηρεσιες
             </p>
             <ul className="flex flex-col gap-2.5">
               {SERVICE_LINKS.map((l) => (

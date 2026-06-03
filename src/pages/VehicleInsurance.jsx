@@ -33,37 +33,37 @@ const HIGHLIGHTS = [
 const PRODUCTS = [
   {
     icon: "🚗",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Αυτοκινήτου",
     desc: "Διαφορετικά προγράμματα για να προσαρμόζετε την ασφάλεια στις δικές σας ανάγκες.",
   },
   {
     icon: "🏍️",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Μηχανής",
     desc: "Τρεις διαφορετικές επιλογές ασφάλισης, ανάλογα με την προστασία που χρειάζεστε.",
   },
   {
     icon: "🚚",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Φορτηγού",
     desc: "Διαφορετικές επιλογές ασφάλισης, για να επιλέξετε τον βαθμό κάλυψης που επιθυμείτε.",
   },
   {
     icon: "🚜",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Αγροτικού Φορτηγού & Τρακτέρ",
     desc: "Επιλέξτε το πρόγραμμα που χρειάζεστε και προστατεύστε το εργαλείο της δουλειάς σας.",
   },
   {
     icon: "⛵",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Σκάφους",
     desc: "Σύγχρονα προγράμματα ασφάλισης, για να επιλέξετε αυτό που ταιριάζει στις ανάγκες σας.",
   },
   {
     icon: "🔧",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Οδικής Βοήθειας",
     desc: "Καλύψεις βλάβης ή ατυχήματος για το όχημά σας.",
   },
@@ -72,37 +72,37 @@ const PRODUCTS = [
 const SERVICES = [
   {
     icon: "📱",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Drive On",
     desc: "Οποιαδήποτε στιγμή μας χρειαστείτε, ειδοποιήστε την Οδική Βοήθεια μέσω της πρωτοποριακής υπηρεσίας Drive On είτε από το site είτε από την εφαρμογή.",
   },
   {
     icon: "📞",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Οδική Βοήθεια 1158",
     desc: "Όλες οι υπηρεσίες σε ένα τηλέφωνο. Κοντά σας παντού και πάντα για ό,τι σημαντικό χρειαστείτε.",
   },
   {
     icon: "🔩",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Δίκτυο Επισκευής Οχημάτων",
     desc: "Άμεση και υπεύθυνη επισκευή του οχήματός σας σε ένα ευρύ και αξιόπιστο δίκτυο.",
   },
   {
     icon: "🏢",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Car Point",
     desc: "Επισκευάστε το όχημά σας στις πρότυπες μονάδες αποζημίωσης και επισκευής οχημάτων.",
   },
   {
     icon: "🔍",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "Προασφαλιστικός Έλεγχος",
     desc: "Εύκολος & γρήγορος προασφαλιστικός έλεγχος από το κινητό σας, μέσω της υπηρεσίας VCS.",
   },
   {
     icon: "💻",
-    label: "Ασφάλιση Οχημάτων",
+    label: "Ασφαλιση Οχηματων",
     title: "my interamerican",
     desc: "Διαχειριστείτε online το συμβόλαιό σας 24 ώρες το 24ωρο.",
   },
@@ -172,18 +172,19 @@ function ServiceCard({ service, index, inView }) {
       {/* <div className="mt-4 md:mt-5 flex items-center gap-2 text-red-500 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         Μάθετε Περισσότερα
         <svg
-          width="12"
-          height="12"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+        width="12"
+        height="12"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         >
-          <polyline points="9 18 15 12 9 6" />
+        <polyline points="9 18 15 12 9 6" />
         </svg>
-      </div> */}
+        </div> */}
+      <div className="mt-3 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
     </a>
   );
 }
@@ -226,7 +227,7 @@ export default function VehicleInsurance() {
             >
               <polyline points="15 18 9 12 15 6" />
             </svg>
-            Επιστροφή
+            Επιστροφη
           </button>
 
           <div className="flex flex-col gap-8 md:gap-10">
@@ -235,9 +236,8 @@ export default function VehicleInsurance() {
               <div
                 className={`flex items-center gap-3 mb-5 md:mb-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               >
-                <div className="w-7 h-px bg-red-600" />
                 <span className="text-red-500 text-[0.65rem] md:text-xs tracking-[0.2em] uppercase">
-                  Interamerican · Προϊόντα & Υπηρεσίες
+                  Interamerican · Προϊοντα & Υπηρεσιες
                 </span>
               </div>
 
@@ -293,9 +293,8 @@ export default function VehicleInsurance() {
             className={`mb-10 md:mb-12 transition-all duration-700 ${productsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-7 h-px bg-red-600" />
               <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
-                Προγράμματα
+                Προγραμματα
               </span>
             </div>
             <h2 className="font-serif text-2xl md:text-4xl text-white font-bold">
@@ -331,9 +330,8 @@ export default function VehicleInsurance() {
             className={`mb-10 md:mb-12 transition-all duration-700 ${servicesInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-7 h-px bg-red-600" />
               <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
-                Υπηρεσίες
+                Υπηρεσιες
               </span>
             </div>
             <h2 className="font-serif text-2xl md:text-4xl text-neutral-800 font-bold">
@@ -361,7 +359,7 @@ export default function VehicleInsurance() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
           <div>
             <p className="text-white/50 text-xs tracking-widest uppercase mb-2">
-              Επικοινωνήστε μαζί μου
+              Επικοινωνηστε μαζι μου
             </p>
             <h3 className="font-serif text-xl md:text-2xl text-white font-bold">
               Έτοιμοι να ξεκινήσουμε;
@@ -387,7 +385,7 @@ export default function VehicleInsurance() {
               }}
               className="text-white/70 text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm border border-white/15 transition-all duration-200 hover:border-red-600 hover:text-white"
             >
-              Φόρμα Επικοινωνίας
+              Φορμα Επικοινωνιας
             </button>
           </div>
         </div>

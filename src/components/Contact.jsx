@@ -169,7 +169,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label className="text-neutral-600 text-xs font-semibold tracking-widest uppercase">
-                  Όνομα
+                  ονομα
                 </label>
                 <input
                   type="text"
@@ -199,7 +199,7 @@ export default function Contact() {
 
             <div className="flex flex-col gap-1.5">
               <label className="text-neutral-600 text-xs font-semibold tracking-widest uppercase">
-                Θέμα
+                Θεμα
               </label>
               <input
                 type="text"
@@ -214,7 +214,7 @@ export default function Contact() {
 
             <div className="flex flex-col gap-1.5">
               <label className="text-neutral-600 text-xs font-semibold tracking-widest uppercase">
-                Μήνυμα
+                Μηνυμα
               </label>
               <textarea
                 name="message"
@@ -256,10 +256,10 @@ export default function Contact() {
                       d="M4 12a8 8 0 018-8v8z"
                     />
                   </svg>
-                  Αποστολή...
+                  Αποστολη...
                 </>
               ) : (
-                "Αποστολή"
+                "Αποστολη"
               )}
             </button>
 

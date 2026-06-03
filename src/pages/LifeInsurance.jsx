@@ -61,7 +61,7 @@ function ProductCard({ product, index }) {
       href={product.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group block bg-white border border-neutral-200 rounded-sm p-5 md:p-8 transition-all duration-500 hover:border-red-300 hover:shadow-xl hover:shadow-red-50 hover:-translate-y-1 ${
+      className={`group block bg-white border border-neutral-200 rounded-sm p-5 md:p-8 transition-all duration-500 hover:border-red-300 hover:shadow-md hover:shadow-red-50 hover:-translate-y-1 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
       style={{ transitionDelay: `${index * 0.1}s` }}
@@ -121,18 +121,19 @@ function ServiceCard({ service, index }) {
       {/* <div className="mt-4 md:mt-5 flex items-center gap-2 text-red-500 text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         Μάθετε Περισσότερα
         <svg
-          width="12"
-          height="12"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+        width="12"
+        height="12"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         >
-          <polyline points="9 18 15 12 9 6" />
+        <polyline points="9 18 15 12 9 6" />
         </svg>
-      </div> */}
+        </div> */}
+      <div className="mt-5 md:mt-6 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
     </a>
   );
 }
@@ -173,7 +174,7 @@ export default function LifeInsurance() {
             >
               <polyline points="15 18 9 12 15 6" />
             </svg>
-            Επιστροφή
+            Επιστροφη
           </button>
 
           <div
@@ -181,7 +182,7 @@ export default function LifeInsurance() {
           >
             <div className="w-7 h-px bg-red-600" />
             <span className="text-red-500 text-[0.65rem] md:text-xs tracking-[0.25em] uppercase">
-              Interamerican · Ασφάλειες
+              Interamerican · Ασφαλειες
             </span>
           </div>
 
@@ -212,9 +213,8 @@ export default function LifeInsurance() {
       <section className="bg-black py-16 md:py-20 px-5 md:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-8 md:mb-10">
-            <div className="w-7 h-px bg-red-600" />
             <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
-              Προστατέψτε εσάς και την οικογένειά σας
+              Προστατεψτε εσας και την οικογενεια σας
             </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -235,9 +235,8 @@ export default function LifeInsurance() {
             className={`mb-10 md:mb-12 transition-all duration-700 ${extrasInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-7 h-px bg-red-600" />
               <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
-                Μοναδικές Παροχές & Υπηρεσίες
+                Μοναδικες Παροχες & Υπηρεσιες
               </span>
             </div>
             <h2 className="font-serif text-2xl md:text-4xl text-neutral-800 font-bold max-w-xl leading-snug">
@@ -264,7 +263,7 @@ export default function LifeInsurance() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
           <div>
             <p className="text-white/30 text-xs tracking-widest uppercase mb-2">
-              Επικοινωνήστε μαζί μου
+              Επικοινωνηστε μαζι μου
             </p>
             <h3 className="font-serif text-xl md:text-2xl text-white font-bold">
               Έτοιμοι να ξεκινήσουμε;
@@ -290,7 +289,7 @@ export default function LifeInsurance() {
               }}
               className="text-white/70 text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm border border-white/15 transition-all duration-200 hover:border-red-600 hover:text-white"
             >
-              Φόρμα Επικοινωνίας
+              Φορμα Επικοινωνιας
             </button>
           </div>
         </div>

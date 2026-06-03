@@ -71,11 +71,9 @@ export default function Services() {
             aria-hidden="true"
             className="flex items-center justify-center gap-3 mb-4"
           >
-            <div className="w-7 h-px bg-red-600" />
             <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
-              Υπηρεσίες
+              Υπηρεσιες
             </span>
-            <div className="w-7 h-px bg-red-600" />
           </div>
           <h2
             id="services-heading"
@@ -243,7 +241,7 @@ function ServiceCard({ service, variant }) {
           aria-label={`Μάθετε περισσότερα για ${service.title}`}
           className="mt-4 flex items-center gap-2 text-xs tracking-[0.12em] uppercase text-white py-2.5 rounded-sm transition-all duration-200 hover:opacity-85 group"
         >
-          Μάθετε Περισσότερα
+          Μαθετε Περισσοτερα
           <svg
             width="14"
             height="14"
