@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.simitos-interamerican.gr/sitemap.xml
