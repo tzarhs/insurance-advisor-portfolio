@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import aboutImg from "../assets/rafail.jpg";
+import aboutImg from "../assets/rafail.webp";
 
 function useInView(ref) {
   const [inView, setInView] = useState(false);
