@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import heroImg from "../assets/hero-bg.jpg";
+import heroImg from "../assets/hero-bg.webp";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -35,10 +35,15 @@ export default function Hero() {
       className="relative min-h-screen flex items-start overflow-hidden"
     >
       {/* Background image */}
-      <div
+      <img
+        src={heroImg}
+        alt=""
         aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
-        style={{ backgroundImage: `url(${heroImg})` }}
+        fetchpriority="high"
+        loading="eager"
+        width="1920"
+        height="1080"
+        className="absolute inset-0 w-full h-full object-cover object-center scale-105"
       />
 
       {/* Overlays */}
