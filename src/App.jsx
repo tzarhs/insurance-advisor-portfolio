@@ -7,6 +7,8 @@ import HomeInsurance from "./pages/HomeInsurance";
 import HealthInsurance from "./pages/HealthInsurance";
 import VehicleInsurance from "./pages/VehicleInsurance";
 import { Analytics } from "@vercel/analytics/react";
+import LiabilityInsurance from "./pages/LiabilityInsurance";
+import Footer from "./components/Footer";
 
 export default function App() {
   const location = useLocation();
@@ -31,7 +33,9 @@ export default function App() {
           <Route path="/katoikia" element={<HomeInsurance />} />
           <Route path="/ygeia" element={<HealthInsurance />} />
           <Route path="/oxima" element={<VehicleInsurance />} />
+          <Route path="/astiki" element={<LiabilityInsurance />} />
         </Routes>
+        <Footer />
       </main>
       <Analytics />
     </>

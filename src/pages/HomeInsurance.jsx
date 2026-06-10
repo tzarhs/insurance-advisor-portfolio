@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import check from "../assets/check.svg";
+import ServiceContact from "../components/ServiceContact";
 
 function useInView(ref) {
   const [inView, setInView] = useState(false);
@@ -246,7 +247,7 @@ export default function HomeInsurance() {
       {/* Why insure */}
       <section
         ref={reasonsRef}
-        className="bg-white py-16 md:py-20 px-5 md:px-16"
+        className="bg-neutral-100 py-16 md:py-20 px-5 md:px-16"
       >
         <div className="max-w-6xl mx-auto">
           <div
@@ -298,42 +299,7 @@ export default function HomeInsurance() {
         </div>
       </section>
 
-      {/* CTA Footer */}
-      <section className="bg-neutral-950 py-12 md:py-16 px-5 md:px-16 border-t border-white/5">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
-          <div>
-            <p className="text-white/50 text-xs tracking-widest uppercase mb-2">
-              Επικοινωνηστε μαζι μου
-            </p>
-            <h3 className="font-serif text-xl md:text-2xl text-white font-bold">
-              Έτοιμοι να ξεκινήσουμε;
-            </h3>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 w-fit md:w-auto">
-            <a
-              href="tel:+306985084708"
-              className="text-white text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm text-center transition-all duration-200 hover:opacity-85"
-              style={{
-                background: "linear-gradient(135deg, #c8141e, #8b0000)",
-              }}
-            >
-              📞 698 508 4708
-            </a>
-            <button
-              onClick={() => {
-                navigate("/");
-                setTimeout(() => {
-                  const el = document.querySelector("#contact");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }, 100);
-              }}
-              className="text-white/70 text-xs tracking-[0.1em] uppercase px-6 py-3 rounded-sm border border-white/15 transition-all duration-200 hover:border-red-600 hover:text-white"
-            >
-              Φορμα Επικοινωνιας
-            </button>
-          </div>
-        </div>
-      </section>
+      <ServiceContact />
     </div>
   );
 }

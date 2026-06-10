@@ -30,6 +30,12 @@ const SERVICES = [
     path: "/oxima",
     desc: "Φροντίζουμε να είμαστε δίπλα σας στα αναπάντεχα περιστατικά που μπορεί να συμβούν στο όχημά σας.",
   },
+  {
+    icon: carIcon,
+    title: "Ασφάλεια Αστικής Ευθύνης",
+    path: "/astiki",
+    desc: "Φροντίζουμε να αισθάνεστε προστατευμένοι κάθε στιγμή από απρόβλεπτα γεγονότα που μπορεί να προκαλέσουν υλική ζημιά ή σωματική βλάβη σε τρίτους, στο πλαίσιο της καθημερινής σας δραστηριότητας.",
+  },
 ];
 
 export default function Services() {
@@ -199,16 +205,19 @@ export default function Services() {
 function ServiceCard({ service, variant }) {
   const isActive = variant === "active";
   const navigate = useNavigate();
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div
+      onMouseEnter={() => isActive && setExpanded(true)}
+      onMouseLeave={() => isActive && setExpanded(false)}
+      onClick={() => isActive && setExpanded(!expanded)}
       className={`rounded-sm border transition-all duration-400 ${
         isActive
           ? "bg-[#9e2828] border-red-900/50 p-8 shadow-2xl shadow-red-950/40 md:scale-[1.08] scale-100"
           : "bg-neutral-800 border-white/6 p-6 opacity-50 md:scale-[0.96] scale-100"
       }`}
     >
-      {/* Icon — alt text matches the card title to give context */}
       <img
         src={service.icon}
         alt=""
@@ -216,32 +225,35 @@ function ServiceCard({ service, variant }) {
         className={`mb-4 transition-all duration-300 invert ${isActive ? "w-8 h-8" : "w-5 h-5"}`}
       />
 
-      {/* h3 — correct level under the h2 section heading */}
       <h3
-        className={`font-serif font-bold mb-3 transition-all duration-300 ${
-          isActive ? "text-white text-2xl" : "text-white/70 text-lg"
+        className={`font-serif font-bold mb-3 transition-all duration-300 min-h-[3.5rem] flex items-end ${
+          isActive ? "text-white text-xl md:text-2xl" : "text-white/70 text-lg"
         }`}
       >
         {service.title}
       </h3>
 
-      <p
-        className={`text-sm leading-relaxed transition-all duration-300 ${
-          isActive ? "text-white/55" : "text-white/30 line-clamp-5"
-        }`}
-      >
-        {service.desc}
-      </p>
+      {/* Fixed height container so all cards stay the same height */}
+      <div className="min-h-[4rem]">
+        <p
+          className={`text-sm leading-relaxed transition-all duration-300 ${
+            isActive ? "text-white/55" : "text-white/30"
+          } ${expanded ? "line-clamp-none" : "line-clamp-2"}`}
+        >
+          {service.desc}
+        </p>
+      </div>
 
-      {/* "Μάθετε Περισσότερα" — aria-label adds context so screen readers
-          don't just hear "Μάθετε Περισσότερα" with no indication what about */}
       {isActive && (
         <button
-          onClick={() => navigate(service.path)}
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(service.path);
+          }}
           aria-label={`Μάθετε περισσότερα για ${service.title}`}
           className="mt-4 flex items-center gap-2 text-xs tracking-[0.12em] uppercase text-white py-2.5 rounded-sm transition-all duration-200 hover:opacity-85 group"
         >
-          Μαθετε Περισσοτερα
+          Μάθετε Περισσότερα
           <svg
             width="14"
             height="14"

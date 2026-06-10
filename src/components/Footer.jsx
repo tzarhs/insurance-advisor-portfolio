@@ -9,9 +9,10 @@ const NAV_LINKS = [
 
 const SERVICE_LINKS = [
   { label: "Ασφάλεια Ζωής", path: "/zoi" },
-  { label: "Ασφάλεια Κατοικίας", path: "/katikia" },
+  { label: "Ασφάλεια Κατοικίας", path: "/katoikia" },
   { label: "Ασφάλεια Υγείας", path: "/ygeia" },
   { label: "Ασφάλεια Οχήματος", path: "/oxima" },
+  { label: "Ασφάλεια Αστικής Ευθύνης", path: "/astiki" },
 ];
 
 export default function Footer() {
