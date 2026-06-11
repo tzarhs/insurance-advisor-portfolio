@@ -32,7 +32,7 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Εισαγωγή — Ραφαήλ Σιμητός, Ασφαλιστικός Σύμβουλος"
-      className="relative min-h-screen flex items-start overflow-hidden"
+      className="relative min-h-[75vh] sm:min-h-screen flex items-start overflow-hidden pb-20"
     >
       {/* Background image */}
       <img
@@ -43,7 +43,7 @@ export default function Hero() {
         loading="eager"
         width="1920"
         height="1080"
-        className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+        className="absolute inset-0 w-full h-full object-cover object-[55%_45%] sm:object-center"
       />
 
       {/* Overlays */}
@@ -56,7 +56,7 @@ export default function Hero() {
 
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-neutral-950 to-transparent"
+        className="absolute bottom-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-t from-neutral-950 to-transparent"
       />
 
       {/* Decorative line */}
@@ -68,7 +68,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full px-16 sm:px-18 md:px-26 pt-56 sm:pt-60 md:pt-68">
+      <div className="relative z-10 max-w-6xl mx-auto w-full px-16 sm:px-18 md:px-26 pt-40 sm:pt-60 md:pt-68">
         <div className="max-w-2xl">
           {/* Top label */}
           <div
@@ -84,7 +84,7 @@ export default function Hero() {
 
           {/* Heading */}
           <h1
-            className={`font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-5 transition-all duration-700 delay-300 ${
+            className={`font-serif text-3xl sm:text-5xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-5 transition-all duration-700 delay-300 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
