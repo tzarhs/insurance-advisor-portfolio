@@ -59,8 +59,6 @@ export default function About() {
             inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-0"
           }`}
         >
-          {/* Eyebrow — decorative, hidden from screen readers to avoid
-              reading "Σχετικά με μένα" twice (section label + heading) */}
           <div aria-hidden="true" className="flex items-center gap-3 mb-5">
             <span className="text-red-500 text-xs tracking-[0.25em] uppercase">
               Σχετικα με εμενα
@@ -70,32 +68,48 @@ export default function About() {
           {/* id matches aria-labelledby on <section> */}
           <h2
             id="about-heading"
-            className="font-serif text-3xl sm:text-4xl md:text-5xl text-neutral-950 font-bold leading-tight mb-6"
+            className="font-serif text-2xl sm:text-3xl md:text-4xl text-neutral-950 font-bold leading-tight mb-5"
           >
-            Αναλυτική σκέψη.
+            Η σωστή ασφάλιση
             <br />
-            <span className="text-red-600">Εξατομικευμένες</span> λύσεις.
+            <span className="text-red-600"> δεν ξεκινά</span> από ένα συμβόλαιο.
           </h2>
 
-          <p className="text-neutral-500 text-sm sm:text-[0.95rem] leading-relaxed mb-5">
-            Ως Ασφαλιστικός Σύμβουλος στην{" "}
-            <span className="text-red-500 font-medium">Interamerican</span>, δεν
-            πιστεύω σε γενικές λύσεις. Εστιάζω στον εντοπισμό κινδύνων, στη
-            βελτιστοποίηση καλύψεων και στη δημιουργία στρατηγικών που έχουν
-            πραγματικό νόημα για τον τρόπο ζωής και τα περιουσιακά στοιχεία κάθε
-            πελάτη.
+          <p className="text-neutral-700 text-sm sm:text-[0.95rem] leading-relaxed mb-5">
+            Ξεκινά από την κατανόηση των ανθρώπων, των στόχων τους και των
+            κινδύνων που μπορεί να απειλήσουν όσα έχουν χτίσει.
+          </p>
+          <p className="text-neutral-700 text-sm sm:text-[0.95rem] leading-relaxed mb-5">
+            Ως Ασφαλιστικός Σύμβουλος της{" "}
+            <span className="text-red-600 font-medium">Interamerican</span>,
+            προσεγγίζω κάθε περίπτωση με αναλυτική σκέψη και στρατηγική λογική.
+            Δεν πιστεύω στις τυποποιημένες λύσεις ούτε στις γενικές προτάσεις.
+            Κάθε άνθρωπος, κάθε οικογένεια και κάθε επιχείρηση έχει διαφορετικές
+            ανάγκες και αξίζει μια προσέγγιση σχεδιασμένη ειδικά για εκείνον.
           </p>
 
-          <p className="text-neutral-500 text-[0.95rem] leading-relaxed mb-10">
-            Απόφοιτος του τμήματος{" "}
-            <span className="text-neutral-700 font-medium">
-              Εφαρμοσμένης Πληροφορικής
-            </span>{" "}
-            του Πανεπιστημίου Μακεδονίας — συνδυάζω επιχειρηματική γνώση με
-            αναλυτική και τεχνική εξειδίκευση στη διαχείριση δεδομένων.
+          <p className="text-neutral-700 text-[0.95rem] leading-relaxed mb-5">
+            Απόφοιτος του Τμήματος Εφαρμοσμένης Πληροφορικής του Πανεπιστημίου
+            Μακεδονίας, συνδυάζω επιχειρηματική αντίληψη, τεχνολογική γνώση και
+            ανάλυση δεδομένων, ώστε να αξιολογώ αποτελεσματικά τους κινδύνους
+            και να προτείνω λύσεις με πραγματική αξία.
+          </p>
+          <p className="text-neutral-700 text-[0.95rem] leading-relaxed mb-5">
+            Ως μέλος ενός ασφαλιστικού γραφείου με ιστορία άνω των 40 ετών στην
+            Interamerican και με την υποστήριξη ενός δικτύου εξειδικευμένων
+            συνεργατών, μπορώ να προσφέρω ολοκληρωμένες λύσεις που καλύπτουν
+            κάθε πτυχή της προσωπικής και επαγγελματικής προστασίας.
+          </p>
+          <p className="text-neutral-700 text-[0.95rem] leading-relaxed font-medium mb-5">
+            Γιατί η πραγματική αξία της ασφάλισης δεν βρίσκεται στο συμβόλαιο.
+          </p>
+          <p className="text-red-700 text-[0.95rem] leading-relaxed mb-5">
+            Βρίσκεται στο να γνωρίζεις ότι ό,τι κι αν συμβεί, έχεις προβλέψει το
+            επόμενο βήμα, είναι μια στρατηγική απόφαση που προστατεύει το παρόν
+            και διασφαλίζει το μέλλον.
           </p>
 
-          <div className="border-t border-neutral-200 pt-8">
+          <div className="border-t border-neutral-200 pt-4">
             <p className="text-neutral-400 text-xs tracking-[0.1em] uppercase mb-1">
               Εξουσιοδοτημενος Αντιπροσωπος
             </p>
