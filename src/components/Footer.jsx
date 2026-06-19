@@ -19,8 +19,20 @@ export default function Footer() {
   const navigate = useNavigate();
 
   const scrollTo = (href) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (window.location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        setActiveHash(href);
+      }
+    }
+    setMenuOpen(false);
   };
 
   return (

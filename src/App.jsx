@@ -9,6 +9,7 @@ import VehicleInsurance from "./pages/VehicleInsurance";
 import { Analytics } from "@vercel/analytics/react";
 import LiabilityInsurance from "./pages/LiabilityInsurance";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ export default function App() {
       </a>
 
       <main id="main-content" ref={mainRef} tabIndex={-1}>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/zoi" element={<LifeInsurance />} />
