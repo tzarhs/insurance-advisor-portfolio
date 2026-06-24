@@ -75,7 +75,7 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Κύρια πλοήγηση"
-      className="absolute top-2 left-0 right-0 z-50 px-6 md:px-16"
+      className="sticky top-0 left-0 right-0 z-50 px-6 md:px-16 transition-all duration-300"
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between h-[70px] relative">
         {/* Logo */}
@@ -145,7 +145,7 @@ export default function Navbar() {
           <button
             onClick={() => scrollTo("#about")}
             aria-current={activeHash === "#about" ? "true" : undefined}
-            className="bg-transparent border-none cursor-pointer text-white text-sm tracking-[0.15em] uppercase transition-colors duration-200 hover:text-red-600 aria-[current]:text-red-500"
+            className="bg-transparent border-none cursor-pointer text-white text-sm tracking-[0.15em] uppercase transition-colors duration-200 hover:text-red-600"
           >
             Σχετικά
           </button>
@@ -185,7 +185,7 @@ export default function Navbar() {
             <button
               onClick={() => scrollTo("#hero")}
               aria-current={activeHash === "#hero" ? "true" : undefined}
-              className="bg-transparent border-none cursor-pointer text-white text-2xl tracking-[0.2em] uppercase transition-colors duration-200 hover:text-red-600 aria-[current]:text-red-500"
+              className="bg-transparent border-none cursor-pointer text-white text-2xl tracking-[0.2em] uppercase transition-colors duration-200 hover:text-red-600 "
             >
               Αρχική
             </button>

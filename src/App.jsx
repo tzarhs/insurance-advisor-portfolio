@@ -10,6 +10,7 @@ import { Analytics } from "@vercel/analytics/react";
 import LiabilityInsurance from "./pages/LiabilityInsurance";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import TopBanner from "./components/TopBanner";
 
 export default function App() {
   const location = useLocation();
@@ -28,7 +29,10 @@ export default function App() {
       </a>
 
       <main id="main-content" ref={mainRef} tabIndex={-1}>
-        <Navbar />
+        <div className="flex flex-col">
+          <TopBanner />
+          <Navbar />
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/zoi" element={<LifeInsurance />} />

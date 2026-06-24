@@ -188,6 +188,21 @@ export default function HomeInsurance() {
                     </p>
                   </div>
                 ))}
+
+                <div
+                  className="inline-flex items-center gap-3 border border-red-800/40 rounded-sm px-4 py-2 self-start"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(200,20,30,0.1), rgba(139,0,0,0.05))",
+                  }}
+                >
+                  <span className="text-red-400 text-lg font-serif font-bold">
+                    25%
+                  </span>
+                  <p className="text-white/50 text-xs">
+                    εκπτώση στην ασφάλεια σεισμού από 22/06 - 21/07
+                  </p>
+                </div>
               </div>
             </div>
           </div>

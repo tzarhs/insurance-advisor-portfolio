@@ -32,7 +32,7 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Εισαγωγή — Ραφαήλ Σιμητός, Ασφαλιστικός Σύμβουλος"
-      className="relative min-h-[75vh] sm:min-h-screen flex items-start overflow-hidden pb-20"
+      className="relative min-h-[75vh] sm:min-h-screen flex items-start overflow-hidden -mt-[70px]"
     >
       {/* Background image */}
       <img
@@ -68,7 +68,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full px-16 sm:px-18 md:px-26 pt-40 sm:pt-60 md:pt-68">
+      <div className="relative z-10 max-w-6xl mx-auto w-full px-16 sm:px-18 md:px-26 pt-34 sm:pt-72 md:pt-80">
         <div className="max-w-2xl">
           {/* Top label */}
           <div
