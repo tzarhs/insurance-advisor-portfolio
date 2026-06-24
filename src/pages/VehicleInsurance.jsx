@@ -205,9 +205,9 @@ export default function VehicleInsurance() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative bg-neutral-900 pt-40 md:pt-52 pb-24 md:pb-32 px-5 md:px-16 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-red-950/30 blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[200px] md:w-[350px] h-[200px] md:h-[350px] rounded-full bg-red-950/15 blur-[80px] pointer-events-none" />
+      <section className="relative bg-neutral-800 pt-20 md:pt-40 pb-24 md:pb-32 px-5 md:px-16 overflow-visible">
+        <div className="absolute -top-10 left-0 w-[500px] h-[500px] rounded-full bg-red-950/30 blur-[120px] pointer-events-none z-[60]" />
+        <div className="absolute -top-10 right-0 w-[300px] h-[300px] rounded-full bg-red-950/15 blur-[100px] pointer-events-none z-[60]" />
 
         <div className="max-w-6xl mx-auto relative">
           <div className="flex flex-col gap-8 md:gap-10">

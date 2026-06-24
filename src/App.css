@@ -212,3 +212,7 @@
 #main-content:focus {
   outline: none;
 }
+
+.menu-open .top-banner {
+  display: none;
+}

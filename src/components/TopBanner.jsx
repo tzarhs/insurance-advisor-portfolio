@@ -26,7 +26,7 @@ export default function TopBanner() {
   }
 `}</style>
 
-      <div className="relative z-[60] bg-red-700 overflow-hidden py-2.5">
+      <div className="top-banner relative z-[60] bg-red-700 overflow-hidden py-2.5">
         <div className="marquee-track text-white text-xs tracking-widest uppercase">
           {Array(40)
             .fill(`${MESSAGE}`)

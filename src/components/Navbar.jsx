@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const SERVICES_MENU = [
@@ -19,6 +19,18 @@ export default function Navbar() {
   const closeTimer = useRef(null);
 
   const scrollTo = (href) => {
+    if (href === "#hero") {
+      if (window.location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      setActiveHash("#hero");
+      setMenuOpen(false);
+      return;
+    }
+
     if (window.location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
@@ -34,6 +46,19 @@ export default function Navbar() {
     }
     setMenuOpen(false);
   };
+
+  const toggleMenu = (val) => {
+    const next = val ?? !menuOpen;
+    setMenuOpen(next);
+    document.body.classList.toggle("menu-open", next);
+  };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    document.body.classList.remove("menu-open");
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   const goToService = (path) => {
     setServicesOpen(false);
@@ -75,7 +100,9 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Κύρια πλοήγηση"
-      className="sticky top-0 left-0 right-0 z-50 px-6 md:px-16 transition-all duration-300"
+      className={`sticky top-0 left-0 right-0 z-50 px-6 md:px-16 transition-all duration-300 ${
+        window.location.pathname !== "/" ? "bg-neutral-800" : "bg-transparent"
+      }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between h-[70px] relative">
         {/* Logo */}
@@ -163,7 +190,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          onClick={() => setMenuOpen((prev) => !prev)}
+          onClick={() => toggleMenu((prev) => !prev)}
           aria-label="Άνοιγμα μενού"
           className="md:hidden text-white"
         >
@@ -172,10 +199,10 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center gap-8 md:hidden overflow-y-auto py-20">
+          <div className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center gap-8 md:hidden overflow-y-auto">
             {/* Close button */}
             <button
-              onClick={() => setMenuOpen(false)}
+              onClick={() => toggleMenu(false)}
               aria-label="Κλείσιμο μενού"
               className="absolute top-6 right-6 text-white"
             >
