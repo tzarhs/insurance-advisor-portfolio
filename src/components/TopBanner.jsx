@@ -21,12 +21,12 @@ export default function TopBanner() {
   @media (max-width: 768px) {
     .marquee-track {
       animation: marquee 12s linear infinite;
-      font-size: 10px;
+      font-size: 12px;
     }
   }
 `}</style>
 
-      <div className="top-banner relative z-[60] bg-red-700 overflow-hidden py-2.5">
+      <div className="top-banner relative z-[60] bg-red-700 overflow-hidden py-3.5">
         <div className="marquee-track text-white text-xs tracking-widest uppercase">
           {Array(40)
             .fill(`${MESSAGE}`)
