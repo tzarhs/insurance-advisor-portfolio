@@ -30,7 +30,7 @@ export default function App() {
 
       <main id="main-content" ref={mainRef} tabIndex={-1}>
         <div className="flex flex-col">
-          <TopBanner />
+          {/* <TopBanner /> */}
           <Navbar />
         </div>
         <Routes>
